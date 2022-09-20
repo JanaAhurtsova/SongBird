@@ -1,11 +1,31 @@
-@mixin font ($size, $height, $weight: 400, $style: normal) {
+@mixin font($size, $height: $size, $weight: 400, $style: normal) {
     font-size: $size;
     font-style: $style;
     font-weight: $weight;
     line-height: $height;
 }
 
-@mixin media-laptop {
+@mixin button() {
+    width: 298px;
+    height: 54px;
+    padding: 16px 0;
+    cursor: pointer;    
+    border-radius: 25px;
+    border: none;
+}
+
+@mixin grid($column: 1fr 9fr 1fr) {
+    display: grid;
+    grid-template-columns: $column;
+}
+
+@mixin flex($justify: center, $align: center) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin media-desktop {
     @media (max-width: $content-width) { @content; }
 }
 
@@ -20,3 +40,4 @@
 @mixin media-desktopsmall {
     @media (max-width: $small-desktop-width) { @content; }
 }
+

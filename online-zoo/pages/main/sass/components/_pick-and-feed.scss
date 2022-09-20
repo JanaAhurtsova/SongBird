@@ -1,0 +1,38 @@
+.pick-and-feed {
+    background: $color-pick-main;
+    padding: 68px 0 100px;
+}
+
+.pick-and-feed__title {
+    color: $color-orange;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.pick-and-feed__big-text {
+    margin-bottom: 40px;
+    margin-left: 70px;
+}
+
+.pick-and-feed__bold__text {
+    font-weight: 500;
+    line-height: 130%;
+    margin-bottom: 10px;
+    margin-left: 70px;
+}
+
+.pick-and-feed__text {
+    line-height: 130%;
+    margin-bottom: 60px;
+    margin-left: 70px;
+}
+
+.pick-and_feed__subtitle {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.works__content {
+    @include flex();
+    
+}

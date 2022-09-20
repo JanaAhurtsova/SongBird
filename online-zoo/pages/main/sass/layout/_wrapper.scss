@@ -1,0 +1,24 @@
+.wrapper {
+    max-width: $content-width;
+    margin: auto;
+}
+
+.wrapper__watch-online {
+    @include flex($justify: flex-end);
+}
+
+.wrapper__backstage {
+    @include flex($justify: space-between, $align: flex-start);
+}
+
+.wrapper__pets {
+    @include flex();
+    flex-direction: column;
+}
+
+.wrapper__pick-and-feed {
+    background-color: $color-pick;
+    border-radius: 20px;
+    backdrop-filter: blur(2px);
+    padding: 41px 0 59px 58px;
+}

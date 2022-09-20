@@ -1,0 +1,46 @@
+.header {
+    padding: 14px 0;
+    background: $color-black;
+}
+
+.wrapper__header {
+    @include grid();
+    align-items: center;
+}
+
+.menu__header {
+    @include flex($justify: flex-start);
+    gap: 5.8rem;
+}
+
+.header__item {
+    font-weight: 500;
+    color: $color-text;
+    cursor: pointer;
+    text-decoration: none;
+    @extend %transition;
+    &:hover {
+        color: $color-btn-hover-active;
+    }
+    &:active {
+        color: $color-btn-hover-active;
+    }
+}
+
+.designed {
+    text-decoration: none;
+    font-weight: 500;
+    color: $color-text;
+    cursor: pointer;
+    @extend %transition;
+    &:hover {
+        color: $color-btn-hover-active;
+    }
+    &:active {
+        color: $color-btn-hover-active;
+    }
+}
+
+.about {
+    color: #F9804B;
+}

@@ -1,0 +1,17 @@
+.logo {
+    @include flex();
+    position: relative;
+    border: 1px solid $color-text;
+    width: 73px;
+    height: 46px;
+    padding: 3.55px 3.55px 0; 
+    border-radius: 2px;
+    @extend %transition;
+}
+
+.logo__link {
+    color: $color-text;
+    text-decoration: none;
+    margin: 0;
+    @extend %transition;
+}
