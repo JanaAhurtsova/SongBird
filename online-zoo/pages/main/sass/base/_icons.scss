@@ -23,5 +23,26 @@
 }
 
 .pay__icon {
-    background-image: url("../../../assets/icons/main/how\ it\ works/pay.svg");
+    background: url("../../../assets/icons/main/how\ it\ works/pay.svg") center/contain no-repeat;
+    width: 108px;
+    height: 60px;
+}
+
+.zoo__icon {
+    background: url("../../../assets/icons/main/how\ it\ works/zoo.svg") center/contain no-repeat;
+    width: 86px;
+    height: 95px;
+}
+
+.monkey__icon {
+    background: url("../../../assets/icons/main/how\ it\ works/monkey.svg") center/contain no-repeat;
+    width: 125px;
+    height: 72px;
+}
+
+.widjet__arrow {
+    background: url("../../../assets/icons/main/how\ it\ works/arrow.svg") center/contain no-repeat;
+    width: 70px;
+    height: 35px;
+    transform: translateY(60px)
 }
