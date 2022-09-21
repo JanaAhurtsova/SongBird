@@ -1,0 +1,27 @@
+.logo__icon {
+    position: absolute;
+    left: 12%;
+    bottom: 12%;
+    @extend %transition;
+    
+}
+
+.pets__icon__banana {
+    background-image: url("../../../assets/icons/main/animals/banana-bamboo_icon.svg");
+    background-position: left;
+    background-repeat: no-repeat;
+    width: 33px;
+    height: 37px;
+}
+
+.pets__icon__meat {
+    background-image: url("../../../assets/icons/main/animals/meet-fish_icon.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 48px;
+    height: 38px;
+}
+
+.pay__icon {
+    background-image: url("../../../assets/icons/main/how\ it\ works/pay.svg");
+}

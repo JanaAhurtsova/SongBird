@@ -1,0 +1,42 @@
+.button {
+    @include button();
+    text-transform: uppercase;
+    background: $color-btn-default;
+    font-weight: 500;
+    padding: 16px 0;
+    color: $color-text;
+    &:hover {
+        background: $color-btn-hover-active;
+    }
+    &:active {
+        background: $color-active;
+    }
+    &:disabled {
+        background: $color-disable;
+    }
+}
+
+.favorite {
+    background-color: $color-orange;
+}
+
+.watch-online__btn {
+    margin-top: 60px;
+}
+
+.feedback,
+.donate {
+    border-radius: 5px;
+}
+
+.submit {
+    width: 129px;
+    height: 42px;
+    background: $color-testimonials-submit;
+    border: 1px solid $color-black-blue;
+    color: $color-black;
+    &:active {
+        color: $color-active;
+        border: 1px solid $color-active;
+    }
+}
