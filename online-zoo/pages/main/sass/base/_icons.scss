@@ -2,8 +2,7 @@
     position: absolute;
     left: 12%;
     bottom: 12%;
-    @extend %transition;
-    
+    @extend %transition;    
 }
 
 .pets__icon__banana {
@@ -46,3 +45,22 @@
     height: 35px;
     transform: translateY(60px)
 }
+
+.testimonial__icon {
+    background: url("../../../assets/icons/main/testimonials/user_icon.svg") center/contain no-repeat;
+    width: 37px;
+    height: 37px;
+}
+
+.oscar {
+    background: url("../../../assets/icons/main/testimonials/oscar.svg") center/contain no-repeat;
+}
+
+.frederica {
+    background: url("../../../assets/icons/main/testimonials/frederica.svg") center/contain no-repeat;
+}
+
+.mila {
+    background: url("../../../assets/icons/main/testimonials/mila.svg") center/contain no-repeat;
+}
+

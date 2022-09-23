@@ -1,11 +1,12 @@
 .button {
     @include button();
     text-transform: uppercase;
-    background: $color-btn-default;
+    background: $color-default;
     font-weight: 500;
     padding: 16px 0;
     color: $color-text;
-    &:hover {
+    &:hover,
+    &:focus {
         background: $color-btn-hover-active;
     }
     &:active {
@@ -16,19 +17,10 @@
     }
 }
 
-.watch-online__btn {
-    margin-top: 60px;
-}
-
-.feedback,
-.button__donate {
-    border-radius: 5px;
-}
-
 .submit {
     width: 129px;
     height: 42px;
-    background: $color-testimonials-submit;
+    background: $color-submit;
     border: 1px solid $color-black-blue;
     color: $color-black;
     border-radius: 5px;
@@ -39,9 +31,10 @@
 }
 
 .feed {
-    transform: translateX(145%);
+    transform: translateX(115%);
 }
 
 .button__donate {
     margin-bottom: 44px;
+    border-radius: 5px;
 }

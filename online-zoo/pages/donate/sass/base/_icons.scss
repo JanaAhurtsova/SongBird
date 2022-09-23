@@ -1,0 +1,22 @@
+.logo__icon {
+    position: absolute;
+    left: 12%;
+    bottom: 12%;
+    @extend %transition;
+    &:hover {
+        fill: #F9804B;
+    }
+}
+
+.x__icon {
+    background: url('../../../assets/icons/donate/x_icon.svg');
+    width: 14px;
+    height: 14px;
+    margin-right: 64px;
+}
+
+.animal__icon {
+    background: url('../../../assets/icons/donate/panda.svg');
+    width: 284px;
+    height: 246px;
+}

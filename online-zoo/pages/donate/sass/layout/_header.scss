@@ -21,7 +21,7 @@
     text-decoration: none;
     @extend %transition;
     &:hover {
-        background-image: $color-btn-default;
+        background-image: $color-default;
         color: transparent;
         -webkit-background-clip: text;
         background-clip: text;
@@ -38,7 +38,7 @@
     cursor: pointer;
     @extend %transition;
     &:hover {
-        background-image: $color-btn-default;
+        background-image: $color-default;
         color: transparent;
         -webkit-background-clip: text;
         background-clip: text;
@@ -49,7 +49,7 @@
 }
 
 .about {
-    background-image: $color-btn-default;
+    background-image: $color-default;
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;

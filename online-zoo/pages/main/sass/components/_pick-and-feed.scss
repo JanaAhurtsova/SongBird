@@ -41,12 +41,6 @@
     margin-bottom: 45px;
 }
 
-.works__content {
-    @include flex($align: flex-start);
-    gap: 30px;
-    margin-bottom: 63px;
-}
-
 .widjet {
     @include flex($align: flex-start);
     flex-direction: column;

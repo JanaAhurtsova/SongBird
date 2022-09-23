@@ -1,0 +1,101 @@
+.testimonials {
+    padding: 146px 0 180px;
+    background: url("../../../assets/images/main/leav_foto.png") bottom -26% right no-repeat;
+}
+
+.testimonials__title {
+    text-align: center;
+    margin-bottom: 52px;
+}
+
+.testimonial {
+    box-sizing: border-box;
+    position: relative;
+    background-color: $color-testimonials-submit;
+    padding: 15px 15px 19px 16px;
+    border-radius: 20px;
+    height: 391px;
+    margin-bottom: 21px;
+    &::before {
+        content: '';
+        position: absolute;
+        background: $color-testimonials-border border-box;
+        height: 391px;
+        border-radius: 20px;
+        border: 2px solid transparent;
+        top: -2px;
+        right: -2px;
+        bottom: -2px;
+        left: -2px;
+        z-index: -1;
+    }
+}
+
+.user {
+    @include flex($justify: flex-start, $align: flex-start);
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.user-name {
+    justify-content: center;
+}
+
+.name {
+    color: $color-black;
+    line-height: 120%;
+    font-weight: 500;
+}
+
+.location {
+    color: $color-testimonials-text;
+    line-height: 120%;
+    letter-spacing: -0.04em;
+    & span {
+        margin: 0 2px 0 5px;
+    }
+}
+
+.feedback__text {
+    font-size: 1.5rem;
+    color: $color-disable;
+    line-height: 120%;
+    font-weight: 300;
+    height: 309px;
+    overflow: hidden;
+}
+
+.scroll {
+    @include flex();
+}
+
+input[type="range"] {
+    position: relative;
+    appearance: none;
+    width: 51.5%;
+    height: 6px;
+    border-radius: 5px;
+    background-color: $color-scroll;
+    margin-bottom: 32px;
+    &::before {
+        content: '';
+        position: absolute;
+        background: $color-testimonials-border border-box;
+        border-radius: 5px;
+        border: 1px solid transparent;
+        top: -1.2px;
+        right: -1.2px;
+        bottom: -1.2px;
+        left: -1.2px;
+        z-index: -1;
+    }
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 19%;
+    height: 6px;
+    background-color: $color-orange;
+    border-radius: 5px;
+    cursor: pointer;
+  }

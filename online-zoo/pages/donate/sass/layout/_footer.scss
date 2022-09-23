@@ -4,7 +4,7 @@
 }
 
 .subscribe-logo {
-    @include flex($justify: space-between, $align: flex-start);
+    @include flex($justify: space-between, $align: flex-start);;
     margin-bottom: 36px;
 }
 
@@ -27,13 +27,13 @@
     height: 42px;
     background-color: $color-footer;
     border-radius: 2px;
-    border-image-source: $color-btn-default;
+    border-image-source: $color-default;
     border-image-slice: 1;
     border-width: 1px;
     margin-right: 8px;
     &::placeholder {
         padding-left: 10px;
-        color: $color-testimonials-text;
+        color: $color-placeholder;
     }
 }
 
@@ -59,9 +59,6 @@
     cursor: pointer;
     &:active {
         color: $color-active;
-        & .media__icon {
-            background-color: $color-active;
-        }
     }
 }
 
