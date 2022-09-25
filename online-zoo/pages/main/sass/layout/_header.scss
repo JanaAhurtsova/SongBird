@@ -48,7 +48,7 @@
     }
 }
 
-.about {
+.menu__item.active {
     background-image: $color-btn-default;
     color: transparent;
     -webkit-background-clip: text;

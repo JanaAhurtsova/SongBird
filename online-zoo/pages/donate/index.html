@@ -11,36 +11,34 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="background">
-        <header class="header">
-            <div class="wrapper wrapper__header">
-                <div class="logo">
-                    <h1> <a href="../main/index.html" class="logo__link">PetStory online <img src="../../assets/icons/main/bamboo.svg" alt="logo-bamboo" class="logo__icon"></a> </h1>
-                </div>
-                <nav class="navigation__header">
-                    <ul class="menu">
-                        <li>
-                            <a href="../main/index.html" class="menu__item about">About</a>
-                        </li>
-                        <li>
-                            <a href="#" class="menu__item">Map</a>
-                        </li>
-                        <li>
-                            <a href="#" class="menu__item">Zoos</a>
-                        </li>
-                        <li>
-                            <a href="#" class="menu__item">Donate</a>
-                        </li>
-                        <li>
-                            <a href="#" class="menu__item">Contact us</a>
-                        </li>
-                    </ul>
-                </nav>
-                <a href="https://www.figma.com/file/ypzT9idgAILaSRVRmDAJxn/online-zoo-3-weeks" class="designed">Designed by ©</a>
+    <header class="header">
+        <div class="wrapper wrapper__header">
+            <div class="logo">
+                <h1> <a href="../main/index.html" class="logo__link">PetStory online <img src="../../assets/icons/main/bamboo.svg" alt="logo-bamboo" class="logo__icon"></a> </h1>
             </div>
-        </header>
-        <section class="watch-online"></section>
-    </div>
+            <nav class="navigation__header">
+                <ul class="menu">
+                    <li>
+                        <a href="../main/index.html" class="menu__item">About</a>
+                    </li>
+                    <li>
+                        <a href="#" class="menu__item">Map</a>
+                    </li>
+                    <li>
+                        <a href="#" class="menu__item">Zoos</a>
+                    </li>
+                    <li>
+                        <a href="#" class="menu__item active">Donate</a>
+                    </li>
+                    <li>
+                        <a href="#" class="menu__item">Contact us</a>
+                    </li>
+                </ul>
+            </nav>
+            <a href="https://www.figma.com/file/ypzT9idgAILaSRVRmDAJxn/online-zoo-3-weeks" class="designed">Designed by ©</a>
+        </div>
+    </header>
+    <section class="watch-online"></section>
     <div class="pick-and-feed">
         <div class="wrapper">
             <h3 class="help">THE ZOO HAS OFFICIALLY REOPENED BUT WE STILL NEED YOUR HELP!</h3>
@@ -59,17 +57,69 @@
                     <div class="x__icon"></div>
                     <div class="animal__icon"></div>
                 </div>
-                <div class="amount">
-                    <h5 class="amount__title">Amount</h5>
-                    <form class="amount-bar" action="#">
-                        <input type="range" value="1000" class="sum" />
-                    </form>
-                    <input type="number" class="another-amount" max="9999" placeholder="Another amount" />
-
+                <h5 class="amount__title">Amount</h5>
+                <div class="progress__bar">
+                    <ul class="progress-bar__list">
+                        <input type="radio" name="count" id="5000" class="count-item">
+                        <input type="radio" name="count" id="2000" class="count-item">
+                        <input type="radio" name="count" id="1000" checked class="count-item">
+                        <input type="radio" name="count" id="500" class="count-item">
+                        <input type="radio" name="count" id="250" class="count-item">
+                        <input type="radio" name="count" id="100" class="count-item">
+                        <input type="radio" name="count" id="50" class="count-item">
+                        <input type="radio" name="count" id="25" class="count-item">
+                    </ul>
                 </div>
-                <form action="#">
-                    <input type="submit" value="Feed a friend now" class="button feed" />
-                </form>
+                <div class="amount">
+                    <label for="5000" class="sum">
+                        <div class="dollar__icon"></div>
+                        5000
+                    </label>
+                    <label for="2000" class="sum">
+                        <div class="dollar__icon"></div>
+                        2000
+                    </label>
+                    <label for="1000" class="sum active">
+                        <div class="dollar__icon active"></div>
+                        1000
+                    </label>
+                    <label for="500" class="sum">
+                        <div class="dollar__icon"></div>
+                        500
+                    </label>
+                    <label for="250" class="sum">
+                        <div class="dollar__icon"></div>
+                        250
+                    </label>
+                    <label for="100" class="sum">
+                        <div class="dollar__icon"></div>
+                        100
+                    </label>
+                    <label for="50" class="sum">
+                        <div class="dollar__icon"></div>
+                        50
+                    </label>
+                    <label for="25" class="sum">
+                        <div class="dollar__icon"></div>
+                        25
+                    </label>
+                </div>
+                <div class="amount__wrapper">
+                    <form class="input__amount" action="#">
+                        <input type="number" class="another-amount" max="9999" placeholder="Another amount" />
+                        <div class="amount-icon"></div>
+                    </form>
+                    <div class="amount-radio">
+                        <input type="radio" name="period" value="monthly" id="monthly">
+                        <label for="monthly">Monthly</label>
+                        <input type="radio" name="period" value="once" checked id="once">
+                        <label for="once">Once</label>
+                    </div>
+                    <form action="#">
+                        <input type="submit" value="Feed a friend now" class="button feed" />
+                    </form>
+                </div>
+                
                 <p class="share">Share with your friends on social networks</p>
             </div>
         </div>
@@ -93,23 +143,24 @@
                 </form>
             <div class="media__navigation">
                 <ul class="media">
-                    <li><a href="#" class="media__item"> <div class="media__icon"><img src="../../assets/icons/main/media/fb.svg" alt="facebook" class="facebook" /></div>Facebook</a></li>
-                    <li><a href="#" class="media__item"><div class="media__icon"><img src="../../assets/icons/main/media/twitter.svg" alt="twitter" class="twitter" /></div>Twitter</a></li>
-                    <li><a href="#" class="media__item"><div class="media__icon"><img src="../../assets/icons/main/media/inst.svg" alt="instagram" class="instagram" /></div>Instagram</a></li>
-                    <li><a href="#" class="media__item"><div class="media__icon"><img src="../../assets/icons/main/media/youtube.svg" alt="youtube" class="youtube" /></div>YouTube</a></li>
+                    <li><a href="https://www.facebook.com" class="media__item"> <div class="media__icon"><img src="../../assets/icons/main/media/fb.svg" alt="facebook" class="facebook" /></div>Facebook</a></li>
+                    <li><a href="https://www.twitter.com" class="media__item"><div class="media__icon"><img src="../../assets/icons/main/media/twitter.svg" alt="twitter" class="twitter" /></div>Twitter</a></li>
+                    <li><a href="https://www.instagram.com" class="media__item"><div class="media__icon"><img src="../../assets/icons/main/media/inst.svg" alt="instagram" class="instagram" /></div>Instagram</a></li>
+                    <li><a href="https://www.youtube.com" class="media__item"><div class="media__icon"><img src="../../assets/icons/main/media/youtube.svg" alt="youtube" class="youtube" /></div>YouTube</a></li>
                 </ul>
                 <div class="menu-author">
                     <navigation class="navigation__footer">
                         <ul class="menu menu__footer">
-                            <li><a href="../main/index.html" class="menu__item about">About</a></li>
+                            <li><a href="../main/index.html" class="menu__item">About</a></li>
                             <li><a href="#" class="menu__item">Map</a></li>
                             <li><a href="#" class="menu__item">Zoos</a></li>
                             <li><a href="#" class="menu__item">Contact us</a></li>
                         </ul>
                     </navigation>
                     <div>
-                        <p class="designed__footer">Designed by Alisa Samborskaya</p>
-                        <p class="rss">©RSSchool & ©Yem Digital 2021</p>
+                        <a href="https://www.figma.com/file/ypzT9idgAILaSRVRmDAJxn/online-zoo-3-weeks" class="designed__footer">Designed by Alisa Samborskaya <br>
+                        </a>
+                        <a href="#" class="rss">©RSSchool & ©Yem Digital 2021</a>
                     </div>
                 </div>
             </div>
