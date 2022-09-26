@@ -1,10 +1,10 @@
 .footer {
-    padding: 40px 0 50px 0;
+    padding: 41px 0 50px 0;
     background-color: $color-footer;
 }
 
 .subscribe-logo {
-    @include flex($justify: space-between, $align: flex-start);
+    @include flex($justify: space-between, $align: flex-start);;
     margin-bottom: 36px;
 }
 
@@ -20,22 +20,22 @@
     margin: 0 0 14px 0;
 }
 
-.submit-email {
+#submit-email {
     box-sizing: border-box;
     appearance: none;
     width: 228px;
     height: 42px;
     background-color: $color-footer;
     border-radius: 2px;
-    border-image-source: $color-btn-default;
+    border-image-source: $color-default;
     border-image-slice: 1;
     border-width: 1px;
-    margin-right: 6px;
+    margin-right: 7px;
     color: $color-text;
     padding-left: 10px;
     &::placeholder {
-        color: $color-testimonials-text;
-    }
+        color: $color-placeholder;
+    }    
     &:active {
         color: $color-active;
         border: 1px solid $color-active;
@@ -75,7 +75,7 @@
     color: $color-text;
     text-decoration: none;
     cursor: pointer;
-    &.active {
+    &:active {
         color: $color-active;
         & .media__icon {
             background-color: $color-active;
@@ -99,7 +99,7 @@
 
 .designed__footer,
 .rss {
-    display: block;
+    display:block;
     font-weight: 100;
     color: $color-text;
     text-decoration: none;

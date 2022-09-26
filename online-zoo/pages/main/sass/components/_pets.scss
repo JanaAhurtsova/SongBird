@@ -4,62 +4,67 @@
     url('../../../assets/images/main/strelitzia_bg.png') bottom right no-repeat;
 }
 
-.layout-3-column {
-    @include grid($column: repeat(3, 1fr));
-    grid-column-gap: 30px;
-    grid-row-gap: 20px;
-    position: relative;
-    margin-bottom: 80px;
-}
-
 .pets__block {
     position: relative;
-    &::before {
-        content: '';
-        position: absolute;
-        background: $color-btn-default border-box;
-        -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-        border-radius: 5px;
-        border: 1px solid transparent;
-        top: 0;
-        right: 0;
-        bottom: -1px;
-        left: -1px;
-        mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-        -webkit-mask-composite: destination-out;
-        mask-composite: exclude;
-    }
+    overflow: hidden;
+    border: 1.2px solid transparent;
+    background: $color-btn-default;
+    border-radius: 5px;
 }
 
 .pets-banana__content {
     @include flex($justify: space-between);
-    padding: 9px 12px 12px 15.5px;
+    padding: 8px 12px 11px 14.5px;
     color: $color-black;
+    transform: translateY(0);
+    transition: transform .5s linear;
+    background-color: $color-text;
 }
 
 .pets-meat__content {
     @include flex($justify: space-between);
-    padding: 9px 8px 12px 15.5px;
+    padding: 8px 8px 11px 14px;
     color: $color-black;
+    transform: translateY(0);   
+    transition: transform .5s linear;
+    background-color: $color-text;
+
 }
 
 .pets__name {
     margin: 0;
     font-weight: 500;
     text-transform: uppercase;
-    line-height: 118%;
+    line-height: 140%;
 }
 
 .pets__country {
     margin: 0;
     font-weight: 300;
     font-size: 1.5rem;
-    line-height: 118%;
+    line-height: 120%;
 }
 
 .pet__img {
     display: block;
     margin: 0;
+    object-fit: contain;
+    width: 100%;
+    transition: transform .5s ease;
+    &:hover {
+        transform: scale(1.06);
+        filter: brightness(60%);
+        & ~ .pets__content {
+            justify-content: center;
+            transform: translateY(-90%);
+            color: $color-text;
+            text-align: center;
+            background-color: transparent;
+            & .pets__icon {
+                display: none;
+            }
+        }
+    }
 }
 
 .arrow__left,

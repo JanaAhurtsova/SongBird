@@ -1,0 +1,11 @@
+.wrapper {
+    max-width: $content-width;
+    margin: auto;
+}
+
+.wrapper__pick-and-feed {
+    background-color: $color-pick;
+    border-radius: 20px;
+    backdrop-filter: blur(2px);
+    padding: 39px 92px 62px;
+}

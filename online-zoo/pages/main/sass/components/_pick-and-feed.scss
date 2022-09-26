@@ -6,33 +6,71 @@
 .pick-and-feed__title {
     color: $color-orange;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
 }
 
 .pick-and-feed__big-text {
-    margin-bottom: 40px;
-    margin-left: 70px;
+    margin-bottom: 42px;
+    margin-left: 99px;
 }
 
 .pick-and-feed__bold__text {
     font-weight: 500;
     line-height: 130%;
     margin-bottom: 10px;
-    margin-left: 70px;
+    margin-left: 99px;
 }
 
 .pick-and-feed__text {
     line-height: 130%;
-    margin-bottom: 60px;
-    margin-left: 70px;
+    margin-bottom: 66px;
+    margin-left: 99px;
+    & a {
+        cursor: pointer;
+        text-decoration: none;
+        color: $color-black-blue;
+        border-bottom: 1px solid $color-orange;
+        &:hover {
+            color: $color-orange;
+        }
+    }
 }
 
 .pick-and_feed__subtitle {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 46px;
 }
 
-.works__content {
-    @include flex();
-    
+.widjet {
+    @include flex($align: flex-start);
+    flex-direction: column;
+    max-width: 168px;
+    align-self: flex-start;
 }
+
+.square {
+    @include flex();
+    position: relative;
+    width: 167px;
+    height: 167px;
+    background: $color-text;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    &::before {
+        content: '';
+        position: absolute;
+        background: $color-btn-default border-box;
+        -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+        border-radius: 5px;
+        border: 1px solid transparent;
+        top: -1px;
+        right: -1px;
+        bottom: -1px;
+        left: -1px;
+        mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: destination-out;
+        mask-composite: exclude;
+    }
+}
+
+

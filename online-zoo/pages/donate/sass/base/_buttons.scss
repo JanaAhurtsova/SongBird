@@ -2,7 +2,7 @@
     @include button();
     text-transform: uppercase;
     background: #F9804B;
-    background-image: $color-btn-default;
+    background-image: $color-default;
     font-weight: 500;
     padding: 16px 0;
     color: $color-text;
@@ -19,23 +19,10 @@
     }
 }
 
-.watch-online__btn {
-    margin-top: 60px;
-}
-
-.favorite {
-    background-color: $color-orange;
-}
-
-.feedback,
-.button__donate {
-    border-radius: 5px;
-}
-
 .submit {
     width: 129px;
     height: 42px;
-    background: $color-testimonials-submit;
+    background: $color-submit;
     border: 1px solid $color-black-blue;
     color: $color-black;
     border-radius: 5px;
@@ -46,9 +33,10 @@
 }
 
 .feed {
-    transform: translateX(145%);
+    margin-left: 8px;
 }
 
 .button__donate {
     margin-bottom: 44px;
+    border-radius: 5px;
 }
