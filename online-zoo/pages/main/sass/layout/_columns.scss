@@ -4,6 +4,9 @@
     grid-row-gap: 20px;
     position: relative;
     margin-bottom: 80px;
+    @media (max-width: 1320px) {
+        grid-row-gap: 92px;
+    }
 }
 
 .works__content {
