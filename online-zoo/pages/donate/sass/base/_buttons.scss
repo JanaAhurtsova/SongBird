@@ -1,10 +1,12 @@
 .button {
     @include button();
     text-transform: uppercase;
-    background: $color-default;
+    background: #F9804B;
+    background-image: $color-default;
     font-weight: 500;
     padding: 16px 0;
     color: $color-text;
+    @extend %transition;
     &:hover,
     &:focus {
         background: $color-btn-hover-active;

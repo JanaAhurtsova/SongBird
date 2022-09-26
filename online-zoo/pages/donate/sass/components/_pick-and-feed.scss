@@ -85,7 +85,7 @@
     height: 2px;
 }
 
-.count-item {
+.count__dot {
     @include flex();
     appearance: none;
     -webkit-appearance: none;
@@ -99,7 +99,7 @@
     z-index: 10;
 }
 
-.count-item:checked:before {
+.count__dot:checked:before {
     content: '';
     position: absolute;
     background: transparent;
@@ -107,17 +107,42 @@
     border-radius: 50%;
     width: 20px;
     height: 20px;
-    transition: .2s;
+    animation-name: fadeInSmall;
+    animation-duration: 200ms;
 }
 
-.count-item:checked:after {
+@keyframes fadeInSmall {
+    0% {
+        width: 0px;
+        height: 0px;
+    }
+    100% {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.count__dot:checked:after {
     content: '';
     position: absolute;
     background: transparent;
     border: 1.5px solid $color-orange;
     border-radius: 50%;
-    width: 37px;
-    height: 37px;
+    width: 40px;
+    height: 40px;
+    animation-name: fadeInBig;
+    animation-duration: 230ms;
+}
+
+@keyframes fadeInBig {
+    0% {
+        width: 0px;
+        height: 0px;
+    }
+    100% {
+        width: 40px;
+        height: 40px;
+    }
 }
 
 .sum {
@@ -126,7 +151,7 @@
     font-size: 2.6rem;
     line-height: 140%;
     color: $color-black-blue;
-    &:has(input:checked) {
+    &.active {
         color: $color-orange;
     }
 }

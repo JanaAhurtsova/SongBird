@@ -1,11 +1,14 @@
 .button {
     @include button();
     text-transform: uppercase;
-    background: $color-btn-default;
+    background: #F9804B;
+    background-image: $color-btn-default;
     font-weight: 500;
     padding: 16px 0;
     color: $color-text;
-    &:hover {
+    @extend %transition;
+    &:hover,
+    &:focus {
         background: $color-btn-hover-active;
     }
     &:active {
@@ -18,6 +21,10 @@
 
 .watch-online__btn {
     margin-top: 60px;
+}
+
+.favorite {
+    background-color: $color-orange;
 }
 
 .feedback,
