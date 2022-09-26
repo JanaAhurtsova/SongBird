@@ -78,20 +78,20 @@
     top: calc(50% - 33px);
     z-index: 1;
     cursor: pointer;
+    &:hover {
+        background: $color-btn-hover-active;
+    }
+    &:active {
+        background: $color-active
+    }
 }
 
 .arrow__left {
     left: -82px;
-    &:active {
-        background: $color-active
-    }
 }
 
 .arrow__right {
     right: -82px;
-    &:active {
-        background: $color-active
-    }
 }
 
 .arrow {
