@@ -50,6 +50,9 @@
 
 .feed {
     transform: translateX(145%);
+    @media (max-width: 1220px) {
+        transform: translateX(92%);
+    }
 }
 
 .button__donate {

@@ -6,6 +6,7 @@
     margin-bottom: 80px;
     @media (max-width: 1320px) {
         grid-row-gap: 92px;
+        margin-bottom: 81px;
     }
 }
 
@@ -13,9 +14,12 @@
     @include flex($align: flex-start);
     gap: 30px;
     margin-bottom: 61px;
+    @include media-desktopsmall {
+        margin-bottom: 70px;
+    }
 }
 
 .layout-4-column {
-    @include grid(repeat(4, 1fr));
-    grid-column-gap: 30px;
+    @include flex($justify: space-between);
+    gap: 30px;
 }

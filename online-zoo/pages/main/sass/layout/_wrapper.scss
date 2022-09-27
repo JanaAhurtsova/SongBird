@@ -1,9 +1,17 @@
 .wrapper {
     max-width: $content-width;
     margin: auto;
-    // @media (max-width: 1220px) {
-    //     max-width: 940px;
-    // }
+    @media (max-width: 1220px) {
+        max-width: 940px;
+    }
+}
+
+.wrapper__header {
+    @include grid();
+    align-items: center;
+    @include media-desktopsmall {
+        @include grid($column: 0.73fr 3fr 1fr);
+    }
 }
 
 .wrapper__watch-online {
@@ -12,16 +20,27 @@
 
 .wrapper__backstage {
     @include flex($justify: space-between, $align: flex-start);
+    @include media-desktopsmall {
+        align-items: center;
+    }
 }
 
 .wrapper__pets {
     @include flex();
     flex-direction: column;
+    position: relative;
 }
 
 .wrapper__pick-and-feed {
+    box-sizing: border-box;
     background-color: $color-pick;
     border-radius: 20px;
     backdrop-filter: blur(2px);
     padding: 41px 0 59px;
+    & form {
+        width: 100%;
+    }
+    @include media-desktopsmall {
+        padding: 30px 49px 50px 48px;
+    }
 }

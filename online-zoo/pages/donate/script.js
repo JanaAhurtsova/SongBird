@@ -9,11 +9,11 @@ dots.forEach(dot => {
         dot.classList.add('active');
         for (let i =0; i< dots.length; i++) {
             if(dots[i].classList.contains('active')) {
-                smallDots[i].setAttribute('checked', 'checked');
+                smallDots[i].setAttribute('checked', true);
                 labels[i].classList.add('active');
                 labels[i].firstElementChild.classList.add('active');
             } else {
-                smallDots[i].removeAttribute('checked')
+                smallDots[i].removeAttribute('checked');
                 labels[i].classList.remove('active');
                 labels[i].firstElementChild.classList.remove('active');
             }

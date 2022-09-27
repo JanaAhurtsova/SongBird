@@ -5,16 +5,15 @@
         background: none;
     }
     @include media-desktopsmall {
-        padding: 100px 0 147px;
+        padding: 100px 0 141px;
     }
-}
-
-.backstage_img {
-    object-fit: contain;
 }
 
 .backstage__content {
     padding-left: 8.6rem;
+    @media (max-width: 1220px) {
+        padding-left: 3.1rem;
+    }
 }
 
 .backstage__title {
