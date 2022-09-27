@@ -1,6 +1,9 @@
 .wrapper {
     max-width: $content-width;
     margin: auto;
+    // @media (max-width: 1220px) {
+    //     max-width: 940px;
+    // }
 }
 
 .wrapper__watch-online {

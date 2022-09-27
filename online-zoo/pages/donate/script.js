@@ -1,4 +1,4 @@
-const dots = document.querySelectorAll('.count__dot');
+const dots = document.querySelectorAll('.big-dot');
 const labels = document.querySelectorAll('.sum');
 
 function changeLabelColor() {

@@ -84,14 +84,21 @@
     &:active {
         background: $color-active
     }
+    
 }
 
 .arrow__left {
     left: -82px;
+    @media (max-width: 1320px) {
+        left: calc(40% - 58px);
+    }
 }
 
 .arrow__right {
     right: -82px;
+    @media (max-width: 1320px) {
+        right: calc(40% - 58px);
+    }
 }
 
 .arrow {

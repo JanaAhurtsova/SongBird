@@ -21,6 +21,9 @@
 
 .watch-online__btn {
     margin-top: 60px;
+    @include media-desktopsmall {
+        margin-top: 42px;
+    }
 }
 
 .favorite {
