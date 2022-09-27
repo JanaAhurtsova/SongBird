@@ -1,14 +1,16 @@
 .backstage {
-    padding: 141px 0 177px;
+    padding: 141px 0 174px;
     background: url('../../../assets/images/main/flower_foto1_bg.png') right top 12px no-repeat;
     @media (max-width: 1440px) {
         background: none;
+    }
+    @include media-desktopsmall {
+        padding: 100px 0 147px;
     }
 }
 
 .backstage_img {
     object-fit: contain;
-    max-width: 52.5%;
 }
 
 .backstage__content {
