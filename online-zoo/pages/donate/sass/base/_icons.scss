@@ -6,6 +6,17 @@
     &:hover {
         fill: #F9804B;
     }
+    @media (max-width: 768px) {
+        height: 17px;
+        left: 14%;
+        bottom: 15%;
+    }
+}
+
+.logo__icon__media {
+    left: 6%;
+    bottom: 9%;
+    height: 13px;
 }
 
 .x__icon {
@@ -30,5 +41,5 @@
 }
 
 .dollar__icon.active {
-    filter: invert(70%) sepia(42%) saturate(4204%) hue-rotate(349deg) brightness(100%)  contrast(102%);
+    filter: invert(70%) sepia(42%) saturate(3404%) hue-rotate(349deg) brightness(120%)  contrast(102%);
 }
