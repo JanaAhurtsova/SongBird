@@ -104,6 +104,13 @@
     margin-right: 12px;
 }
 
+.menu__footer {
+    padding-left: 40px;
+    @include media-desktopsmall {
+        padding-left: 0;
+    }
+}
+
 .menu-author {
     @include flex($justify: space-between, $align: flex-end);
     width: 69%;

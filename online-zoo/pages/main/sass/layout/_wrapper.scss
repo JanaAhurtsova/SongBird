@@ -32,6 +32,8 @@
 }
 
 .wrapper__pick-and-feed {
+    @include flex();
+    flex-direction: column;
     box-sizing: border-box;
     background-color: $color-pick;
     border-radius: 20px;

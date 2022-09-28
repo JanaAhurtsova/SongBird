@@ -1,11 +1,27 @@
 .wrapper {
     max-width: $content-width;
     margin: auto;
+    @media (max-width: 1220px) {
+        max-width: 940px;
+    }
+}
+
+.wrapper__header {
+    @include grid();
+    align-items: center;
+    @include media-desktopsmall {
+        @include grid($column: 0.73fr 3fr 1fr);
+    }
 }
 
 .wrapper__pick-and-feed {
+    @include flex();
+    flex-direction: column;
     background-color: $color-pick;
     border-radius: 20px;
     backdrop-filter: blur(2px);
     padding: 39px 92px 62px;
+    @media (max-width: 1220px) {
+        padding: 20px 65px 47px;
+    }
 }

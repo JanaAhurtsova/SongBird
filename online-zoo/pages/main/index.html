@@ -50,10 +50,7 @@
     </div>
     <section class="backstage">
         <div class="wrapper wrapper__backstage">
-            <picture>
-                <source media="(max-width: 1220px)" srcset="../../assets/images/main/bamboo-cap-small-desktop.jpg" type="image/jpg">
-                <img src="../../assets/images/main/bamboo-cap.jpg" alt="bamboo-cap" class="backstage_img">
-            </picture>
+            <img src="../../assets/images/main/bamboo-cap.jpg" alt="bamboo-cap" class="backstage_img">
             <div class="backstage__content">
                 <h2 class="backstage__title">The Backstage of the Wilderness World.</h2>
                 <p class="backstage__description">The site was founded on the basis of a volunteer movement to protect and care for animals.</p>
@@ -148,9 +145,11 @@
     <section class="pick-and-feed">
         <div class="wrapper wrapper__pick-and-feed">
             <h2 class="pick-and-feed__title">Pick and feed a friend</h2>
-            <h4 class="pick-and-feed__big-text">We know the animals bring you joy, and in these extraordinary times, we're glad.</h4>
-            <p class="pick-and-feed__bold__text">During a time when the COVID-19 epidemic is touching all of our lives, we're proud and glad that people around the world find joy in PetStory.</p>
-            <p class="pick-and-feed__text">Even though the zoo has reopened, we need you now more than ever to help us deal with these problems. Please consider a gift to our <a href="../donate/index.html">Emergency Support Fund</a>.</p>
+            <div class="pick-and-feed__text">
+                <h4 class="pick-and-feed__big-text">We know the animals bring you joy, and in these extraordinary times, we're glad.</h4>
+                <p class="pick-and-feed__bold__text">During a time when the COVID-19 epidemic is touching all of our lives, we're proud and glad that people around the world find joy in PetStory.</p>
+                <p class="pick-and-feed__support">Even though the zoo has reopened, we need you now more than ever to help us deal with these problems. Please consider a gift to our <a href="../donate/index.html">Emergency Support Fund</a>.</p>
+            </div>
             <h3 class="pick-and_feed__subtitle">How it works</h3>
             <div class="works__content">
                 <div class="widjet pay">
@@ -174,8 +173,8 @@
                     <div class="widjet__text">Your favorite animal gets delicious dish</div>
                 </div>
             </div>
-            <form action="../donate/index.html">
-                <input type="submit" value="Feed a friend now" class="button feed" />
+            <form class="feed" action="../donate/index.html">
+                <input type="submit" value="Feed a friend now" class="button" />
             </form>
         </div>
     </section>

@@ -1,16 +1,22 @@
 .footer {
     padding: 40px 0 50px 0;
     background-color: $color-footer;
+    @include media-desktopsmall {
+        padding: 40px 0 50px;
+    }
 }
 
 .subscribe-logo {
-    @include flex($justify: space-between, $align: flex-start);;
-    margin-bottom: 35px;
+    @include flex($justify: space-between, $align: flex-start);
+    margin-bottom: 36px;
 }
 
 .subscribe {
     @include flex($align: flex-start);
     flex-direction: column;
+    @include media-desktopsmall {
+        margin-right: 32px;
+    }
 }
 
 .subscribe_text {
@@ -30,12 +36,12 @@
     border-image-source: $color-default;
     border-image-slice: 1;
     border-width: 1px;
-    margin-right: 7px;
+    margin-right: 6px;
     color: $color-text;
     padding-left: 10px;
     &::placeholder {
         color: $color-placeholder;
-    }    
+    }
     &:active {
         color: $color-active;
         border: 1px solid $color-active;
@@ -98,6 +104,13 @@
     margin-right: 12px;
 }
 
+.menu__footer {
+    padding-left: 40px;
+    @include media-desktopsmall {
+        padding-left: 13px;
+    }
+}
+
 .menu-author {
     @include flex($justify: space-between, $align: flex-end);
     width: 69%;
@@ -105,7 +118,7 @@
 
 .designed__footer,
 .rss {
-    display:block;
+    display: block;
     font-weight: 100;
     color: $color-text;
     text-decoration: none;
