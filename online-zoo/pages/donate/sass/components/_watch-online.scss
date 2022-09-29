@@ -1,4 +1,17 @@
 .watch-online {
     background: url('../../../assets/images/main/Panda.jpg') center/cover no-repeat;
     height: 387px;
+    @include media-desktopsmall {
+        height: 390px;
+        background: url('../../../assets/images/main/Panda.jpg') center left 29% no-repeat;
+
+    }
+    @include media-tablet {
+        margin-top: 34px;
+        height: 335px;
+        width: 640px;
+        background: url('../../../assets/images/donate/panda_bg.jpg') center left 35% no-repeat;
+
+    }
 }
+

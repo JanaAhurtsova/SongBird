@@ -1,6 +1,9 @@
 .footer {
     padding: 40px 0 50px 0;
     background-color: $color-footer;
+    @include media-desktopsmall {
+        padding: 40px 18px 50px 43px;
+    }
 }
 
 .subscribe-logo {
@@ -11,6 +14,9 @@
 .subscribe {
     @include flex($align: flex-start);
     flex-direction: column;
+    @include media-desktopsmall {
+        margin-right: 32px;
+    }
 }
 
 .subscribe_text {
@@ -96,6 +102,13 @@
     height: 26px;
     background-color: rgba(196, 196, 196, 0.5);
     margin-right: 12px;
+}
+
+.menu__footer {
+    padding-left: 40px;
+    @include media-desktopsmall {
+        padding-left: 0;
+    }
 }
 
 .menu-author {

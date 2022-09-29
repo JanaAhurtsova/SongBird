@@ -2,19 +2,53 @@
     padding-bottom: 100px;
     background: url('../../../assets/images/main/palm_foto_bg.png') bottom left no-repeat,
     url('../../../assets/images/main/strelitzia_bg.png') bottom right no-repeat;
+    @media (max-width: 1220px) {
+        background: url('../../../assets/images/main/palm_foto2.png') bottom left no-repeat,
+    url('../../../assets/images/main/strelitzia_bg.png') bottom right/(241px 180px) no-repeat;
+    }
+    @include media-desktopsmall {
+        padding-bottom: 140px;
+    }
 }
 
 .pets__block {
     position: relative;
     overflow: hidden;
-    border: 1.2px solid transparent;
+    border: 1px solid transparent;
     background: $color-btn-default;
     border-radius: 5px;
+    &:last-child {
+        display:none;
+        @include media-desktopsmall {
+            display: block;
+            order: 5;
+        }
+    }
+    &:nth-child(3) {
+        @include media-desktopsmall {
+            order: 4;
+        }
+    }
+    &:nth-child(4) {
+        @include media-desktopsmall {
+            display: none;
+        }
+    }
+    &:nth-child(5) {
+        @include media-desktopsmall {
+            order: 3;
+        }
+    }
+    &:nth-child(6) {
+        @include media-desktopsmall {
+            order: 6;
+        }
+    }
 }
 
 .pets-banana__content {
     @include flex($justify: space-between);
-    padding: 8px 12px 11px 14.5px;
+    padding: 8px 12px 12px 14.5px;
     color: $color-black;
     transform: translateY(0);
     transition: transform .5s linear;
@@ -23,7 +57,7 @@
 
 .pets-meat__content {
     @include flex($justify: space-between);
-    padding: 8px 8px 11px 14px;
+    padding: 8px 8px 12px 14px;
     color: $color-black;
     transform: translateY(0);   
     transition: transform .5s linear;
@@ -75,7 +109,7 @@
     border-radius: 50%;
     width: 62px;
     height: 62px;
-    top: calc(50% - 33px);
+    top: calc(43% - 31px);
     z-index: 1;
     cursor: pointer;
     &:hover {
@@ -90,14 +124,14 @@
 .arrow__left {
     left: -82px;
     @media (max-width: 1320px) {
-        left: calc(40% - 58px);
+        left: calc(40% - 54px);
     }
 }
 
 .arrow__right {
     right: -82px;
     @media (max-width: 1320px) {
-        right: calc(40% - 58px);
+        right: calc(40% - 54px);
     }
 }
 

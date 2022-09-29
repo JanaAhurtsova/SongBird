@@ -4,18 +4,18 @@
 
 .watch-online {
     padding: 86px 0 100px;
-    // @include media-desktopsmall {
-    //     padding: 43px 85px 47px 0;
-    // }
+    @include media-desktopsmall {
+        padding: 43px 85px 47px 0;
+    }
 }
 
 .watch-online__content {
     @include flex();
     flex-direction: column;
     max-width: 500px;
-    // @include media-desktopsmall {
-    //     max-width: 400px;
-    // } 
+    @include media-desktopsmall {
+        max-width: 400px;
+    } 
 }
 
 .watch-online__title {
