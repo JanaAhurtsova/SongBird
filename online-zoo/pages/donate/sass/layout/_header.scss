@@ -2,15 +2,15 @@
     position: relative;
     padding: 14px 0;
     background: $color-black;
+    width: 100vw;
     z-index: 10;
     @include media-tablet {
         position: fixed;
         top: 0;
-        width: 100%;
         padding: 2.3px 0 2.7px;
     }
     & .wrapper {
-        @media (max-width: 768px) {
+        @include media-tablet {
             @include flex($justify: space-between);
         }
     }
@@ -24,7 +24,7 @@
     @include media-desktopsmall {
         gap: 4.8rem;
     }
-    @media (max-width: 768px) {
+    @include media-tablet {
         align-items: flex-start;
         flex-direction: column;
         gap: 1.5rem;

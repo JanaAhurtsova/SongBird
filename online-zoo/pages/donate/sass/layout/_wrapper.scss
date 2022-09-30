@@ -4,7 +4,7 @@
     @media (max-width: 1220px) {
         max-width: 940px;
     }
-    @media (max-width: 768px) {
+    @include media-tablet {
         max-width: 600px;
     }
 }
@@ -16,13 +16,13 @@
     @include media-desktopsmall {
         @include grid($column: 0.73fr 3fr 1fr);
     }
-    @media (max-width: 768px) {
+    @include media-tablet {
         @include flex($align: flex-start, $justify: flex-start);
         flex-direction: column;
         position: fixed;
-        padding: 20px 0 0 25px;
+        padding: 40px 0 0 30px;
         width: 30%;
-        height: 62%;
+        height: 310px;
         top: 0;
         right: 0;
         background-color: rgba(0, 0, 0, 0.8);
@@ -32,7 +32,7 @@
         visibility: hidden;
     }
     &.active {
-        @media (max-width: 768px) {
+        @include media-tablet {
             right: 0;
             visibility: visible;
         }
@@ -51,5 +51,12 @@
     }
     @include media-tablet {
         padding: 30px 0 31px;
+    }
+}
+
+.wrapper__footer {
+    @include flex($justify: space-between, $align: stretch);
+    @include media-tablet {
+        flex-direction: column;
     }
 }

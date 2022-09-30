@@ -1,8 +1,14 @@
 .wrapper {
     max-width: $content-width;
     margin: auto;
-    @media (max-width: 1220px) {
+    @include media-desktopsmall {
         max-width: 940px;
+    }
+    @include media-tablet {
+        max-width: 600px;
+    }
+    @include media-mobile {
+        max-width: 300px;
     }
 }
 
@@ -11,6 +17,27 @@
     align-items: center;
     @include media-desktopsmall {
         @include grid($column: 0.73fr 3fr 1fr);
+    }
+    @include media-tablet {
+        @include flex($align: flex-start, $justify: flex-start);
+        flex-direction: column;
+        position: fixed;
+        padding: 40px 0 0 30px;
+        width: 30%;
+        height: 310px;
+        top: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        border-radius: 15px;
+        border: none;
+        right: 100%;
+        visibility: hidden;
+    }
+    &.active {
+        @include media-tablet {
+            right: 0;
+            visibility: visible;
+        }
     }
 }
 
@@ -23,6 +50,9 @@
     @include media-desktopsmall {
         align-items: center;
     }
+    @media (max-width: 600px) {
+        flex-direction: column;
+    }
 }
 
 .wrapper__pets {
@@ -34,6 +64,7 @@
 .wrapper__pick-and-feed {
     @include flex();
     flex-direction: column;
+    position: relative;
     box-sizing: border-box;
     background-color: $color-pick;
     border-radius: 20px;
@@ -44,5 +75,24 @@
     }
     @include media-desktopsmall {
         padding: 30px 49px 50px 48px;
+    }
+    @include media-tablet {
+        align-items: flex-start;
+        padding: 10px 20px 60px;
+        max-width: 100%;
+    }
+}
+
+.wrapper__testimonials {
+    @include media-tablet {
+        @include flex();
+        flex-direction: column;
+    }
+}
+
+.wrapper__footer {
+    @include flex($justify: space-between, $align: stretch);
+    @include media-tablet {
+        flex-direction: column;
     }
 }

@@ -6,7 +6,7 @@
     &:hover {
         fill: #F9804B;
     }
-    @media (max-width: 768px) {
+    @include media-tablet {
         height: 17px;
         left: 14%;
         bottom: 15%;

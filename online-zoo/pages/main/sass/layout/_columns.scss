@@ -8,6 +8,10 @@
         grid-row-gap: 92px;
         margin-bottom: 81px;
     }
+    @include media-tablet {
+        grid-template-columns: 1fr 1fr;
+        margin-bottom: 60px;
+    }
 }
 
 .works__content {
@@ -17,9 +21,23 @@
     @include media-desktopsmall {
         margin-bottom: 70px;
     }
+    @media (max-width: 768px) {
+        gap: 0;
+    }
+    @include media-tablet {
+        margin-bottom: 42px;
+        justify-content: flex-start;
+        gap: 43px;
+        flex-wrap: wrap;
+    }
 }
 
 .layout-4-column {
     @include flex($justify: space-between);
     gap: 30px;
+    @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 40px;
+    }
 }
