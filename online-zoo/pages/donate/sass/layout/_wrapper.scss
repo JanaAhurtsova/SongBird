@@ -7,6 +7,9 @@
     @include media-tablet {
         max-width: 600px;
     }
+    @include media-mobile {
+        max-width: 300px;
+    }
 }
 
 .wrapper__header {
@@ -21,11 +24,11 @@
         flex-direction: column;
         position: fixed;
         padding: 40px 0 0 30px;
-        width: 30%;
+        width: 150px;
         height: 310px;
         top: 0;
         right: 0;
-        background-color: rgba(0, 0, 0, 0.8);
+        background-color: $color-text;
         border-radius: 15px;
         border: none;
         right: 100%;
@@ -51,6 +54,9 @@
     }
     @include media-tablet {
         padding: 30px 0 31px;
+    }
+    @media (max-width: 412px) {
+        padding: 20px 0;
     }
 }
 

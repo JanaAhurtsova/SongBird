@@ -48,6 +48,9 @@
     &:active {
         color: $color-btn-hover-active;
     }
+    @include media-tablet {
+        color: $color-black-blue;
+    }
 }
 
 .designed {
@@ -65,6 +68,9 @@
     }
     &:active {
         color: $color-btn-hover-active;
+    }
+    @include media-tablet {
+        color: $color-black-blue;
     }
 }
 

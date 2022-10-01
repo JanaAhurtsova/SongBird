@@ -76,10 +76,15 @@
     @include media-tablet {
         padding: 0.54px 4.75px 6px;
         width: 72px;
+        grid-row-start: 1;
+        grid-column-start: 1;
     }
-    @media (max-width: 390px) {
+    @media (max-width: 412px) {
         border: none;
         width: 128px;
+        height: 23px;
         padding: 0;
+        order: -2;
+        margin-bottom: 30px;
     }
 }

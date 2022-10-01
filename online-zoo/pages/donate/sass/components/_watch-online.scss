@@ -13,5 +13,10 @@
         background: url('../../../assets/images/donate/panda_bg.jpg') center left 35% no-repeat;
 
     }
+    @media (max-width: 412px) {
+        height: 187px;
+        background-size: cover;
+        background-position: center left;
+    }
 }
 

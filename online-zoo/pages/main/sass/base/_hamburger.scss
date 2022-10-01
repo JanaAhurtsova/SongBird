@@ -40,11 +40,13 @@
 .hamburger.active::before {
     transform: rotate(40deg);
     top: 4px;
+    background-color: $color-black;
 }
 
 .hamburger.active::after {
     transform: rotate(-40deg);
     bottom: 4px;
+    background-color: $color-black;
 }
 
 .hamburger__line.active {

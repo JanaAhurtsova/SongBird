@@ -7,6 +7,9 @@
     @include media-tablet {
         padding: 20px 0;
     }
+    @include media-mobile {
+        padding: 20px 10px;
+    }
 }
 
 .pick-and-feed__title {
@@ -20,6 +23,10 @@
         font-size: 4.2rem;
         margin-bottom: 21px;
         align-self: center;
+    }
+    @media (max-width: 412px) {
+        margin-bottom: 10px;
+        font-size: 2.4rem;
     }
 }
 
@@ -39,6 +46,12 @@
     @include media-tablet {
         font-size: 2.2rem;
     }
+    @media (max-width: 412px) {
+        font-size: 1.8rem;
+        text-align: center;
+        line-height: 120%;
+        margin-bottom: 18px;
+    }
 }
 
 .pick-and-feed__bold__text {
@@ -52,6 +65,9 @@
     }
     @include media-tablet {
         margin-right: 0;
+    }
+    @include media-mobile {
+        display: none;
     }
 }
 
@@ -77,6 +93,9 @@
     @include media-tablet {
         margin-bottom: 33px;
     }
+    @include media-mobile {
+        display: none;
+    }
 }
 
 .pick-and_feed__subtitle {
@@ -86,6 +105,10 @@
         margin-bottom: 27px;
         align-self: center;
     }
+    @media (max-width: 412px) {
+        font-size: 2.4rem;
+        margin-bottom: 17px;
+    }
 }
 
 .widjet {
@@ -93,7 +116,6 @@
     flex-direction: column;
     position: relative;
     max-width: 168px;
-    align-self: flex-start;
 }
 
 .square {
@@ -120,10 +142,25 @@
         -webkit-mask-composite: destination-out;
         mask-composite: exclude;
     }
+    @media (max-width: 628px) {
+        margin-bottom: 10px;
+    }
 }
 
 .feed {
     @include flex();
+}
+
+.pay {
+    @media (max-width: 628px) {
+        margin-bottom: 42px;
+    }
+}
+
+.zoo {
+    @media (max-width: 628px) {
+        margin-bottom: 29px;
+    }
 }
 
 .pay::before,
@@ -133,6 +170,22 @@
         position: absolute;
         width: 93px;
         top: -18px;
-        right: -37%;
+        right: -36%;
+    }
+    @media (max-width: 628px) {
+        transform: rotate(83deg);
+        top: calc(100% - 10px);
+    }
+}
+
+.pay::before {
+    @media (max-width: 628px) {
+        top: calc(100% - 10px);
+    }
+}
+
+.zoo::before {
+    @media (max-width: 628px) {
+        top: calc(100% - 24px);
     }
 }

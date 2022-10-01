@@ -77,6 +77,13 @@
     @include media-tablet {
         margin-top: 30px;
         margin-bottom: 0;
+        grid-row-start: 2;
+        grid-row-end: 4;
+        grid-column-start: 1;
+    }
+    @media (max-width: 412px) {
+        order: 1;
+        margin-top: 20px;
     }
 }
 

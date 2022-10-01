@@ -8,6 +8,9 @@
     @include media-tablet {
         padding: 30px 0 46px;
     }
+    @include media-mobile {
+        padding: 30px 0 20px;
+    }
 }
 
 .help {
@@ -35,6 +38,10 @@
     @include media-tablet {
         margin-bottom: 33px;
     }
+    @include media-mobile {
+        line-height: 138%;
+        margin-bottom: 30px;
+    }
 }
 
 .information {
@@ -52,6 +59,10 @@
     @include media-tablet {
         margin-bottom: 30px;
     }
+    @media (max-width: 412px) {
+        font-size: 2.4rem;
+        line-height: 120%;
+    }
 }
 
 .pick-and-feed__title {
@@ -66,6 +77,10 @@
     @include media-tablet {
         margin-left: -2px;
         margin-bottom: 23px;
+    }
+    @media (max-width: 412px) {
+        font-size: 2.4rem;
+        margin-bottom: 10px;
     }
 }
 
@@ -82,10 +97,18 @@
         text-align: center;
         line-height: 120%;
     }
+    @media (max-width: 412px) {
+        font-size: 1.6rem;
+        line-height: 140%;
+        margin-bottom: 10px;
+    }
 }
 
 .diet {
     transform: translate(-8%, 33%);
+    @media (max-width: 412px) {
+        transform: translate(0, 33%);
+     }
 }
 
 .diet__content {
@@ -93,6 +116,11 @@
     margin-bottom: 53px;
     @include media-tablet {
         margin-bottom: 44px;
+    }
+    @media (max-width: 412px) {
+       align-self: stretch;
+       justify-content: space-between;
+       margin-bottom: 5px;
     }
 }
 
@@ -106,10 +134,17 @@
     @include media-tablet {
         margin-bottom: 9px;
     }
+    @media (max-width: 546px) {
+        font-size: 4.06rem;
+        margin-bottom: 2px;
+    }
 }
 
 .diet__text {
     text-align: center;
+    @media (max-width: 546px) {
+        font-size: 0.9rem;
+    }
 }
 
 .amount__title {
@@ -122,7 +157,10 @@
     @include media-tablet {
         margin-left: 10px;
         margin-bottom: 10px;
-
+    }
+    @media (max-width: 412px) {
+        margin-left: 0;
+        margin-bottom: 13px;
     }
 }
 
@@ -142,6 +180,10 @@
     @include media-tablet {
         padding: 12px 35px 13px 35px;
     }
+    @media (max-width: 412px) {
+        padding: 6px 17.5px;
+        margin-bottom: 5px;
+    }
 }
 
 .progress-bar__list {
@@ -152,6 +194,7 @@
     width: 100%;
     height: 2px;
 }
+
 .big-dot {
     @include flex();
     width: 50px;
@@ -165,6 +208,9 @@
     }
     &:last-child {
         margin-right: -20px;
+        @media (max-width: 412px) {
+            margin-right: -22.5px;
+        }
     }
     &:nth-child(2) {
         @include media-desktopsmall {
@@ -180,7 +226,11 @@
         @include media-tablet {
             margin-left: -20px;
         }
+        @media (max-width: 412px) {
+            margin-left: -22.5px;
+        }
     }
+    
 }
 
 .count__dot {
@@ -195,6 +245,10 @@
     background: $color-yellow;
     border: none;
     z-index: 10;
+    @media (max-width: 412px) {
+        width: 5px;
+        height: 5px;
+    }
 }
 
 .count__dot:checked:before {
@@ -207,6 +261,10 @@
     height: 20px;
     animation-name: fadeInSmall;
     animation-duration: 200ms;
+    @media (max-width: 412px) {
+        width: 11.5px;
+        height: 11.5px;
+    }
 }
 
 @keyframes fadeInSmall {
@@ -230,6 +288,10 @@
     height: 36px;
     animation-name: fadeInBig;
     animation-duration: 230ms;
+    @media (max-width: 412px) {
+        width: 20px;
+        height: 20px;
+    }
 }
 
 @keyframes fadeInBig {
@@ -262,6 +324,9 @@
             display: none;
         }
     }
+    @media (max-width: 412px) {
+        font-size: 1.3rem;
+    }
 }
 
 .amount {
@@ -281,6 +346,10 @@
         margin-right: 0;
         width: 100%;
         padding: 0 20px 0 16px;
+    }
+    @include media-mobile {
+        padding: 0 10.5px 0 8.5px;
+        margin-bottom: 25px;
     }
 }
 
@@ -338,6 +407,9 @@ input[type=number] {
         padding: 11px 6px;
         margin-bottom: 31px;
     }
+    @include media-mobile {
+        margin-bottom: 27px;
+    }
 }
 
 .amount-radio {
@@ -346,6 +418,10 @@ input[type=number] {
     align-items: center;
     @include media-desktopsmall {
         margin-left: -17px;
+    }
+    @include media-mobile {
+        margin-left: -20px;
+        margin-bottom: 25px;
     }
 }
 
@@ -371,4 +447,8 @@ input[type=number] {
 .share {
     margin-top: 30px;
     text-align: center;
+    @media (max-width: 600px) {
+        text-align: justify;
+        letter-spacing: -.03px;
+    }
 }

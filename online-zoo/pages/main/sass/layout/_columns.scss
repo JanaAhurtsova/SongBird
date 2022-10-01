@@ -10,7 +10,17 @@
     }
     @include media-tablet {
         grid-template-columns: 1fr 1fr;
-        margin-bottom: 60px;
+        margin-bottom: 57px;
+    }
+    @media (max-width: 432px) {
+        grid-row-gap: 50px;
+    }
+    @media (max-width: 432px) {
+        grid-template-columns: 1fr;
+    }
+    @include media-mobile {
+        grid-row-gap: 18px;
+        margin-bottom: 19px;
     }
 }
 
@@ -25,19 +35,27 @@
         gap: 0;
     }
     @include media-tablet {
-        margin-bottom: 42px;
+        margin-bottom: 43px;
         justify-content: flex-start;
         gap: 43px;
         flex-wrap: wrap;
     }
+    @media (max-width: 628px) {
+        flex-direction: column;
+        gap: 0;
+        margin-bottom: 39px;
+    }
 }
 
 .layout-4-column {
-    @include flex($justify: space-between);
+    @include flex($align: flex-start);
     gap: 30px;
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
         flex-direction: column;
-        gap: 15px;
+        align-items: center;
         margin-bottom: 40px;
+    }
+    @media (max-width: 412px) {
+        margin-bottom: 28px;
     }
 }
