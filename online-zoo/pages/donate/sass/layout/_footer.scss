@@ -183,10 +183,15 @@
 
 .menu__footer {
     flex-wrap: wrap;
+    @media (max-width: 900px) {
+        margin: 0;
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
     @include media-tablet {
         flex-direction: row;
         gap: 36px;
-        margin: 0;
     }
     @include media-mobile {
         gap: 30px;
