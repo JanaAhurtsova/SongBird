@@ -174,7 +174,7 @@
     @include media-tablet {
         flex-wrap: nowrap;
     }
-    @media (max-width: 412px) {
+    @media (max-width: 600px) {
         flex-direction: column-reverse;
         align-items: center;
         margin-top: 5px;
@@ -209,7 +209,7 @@
         color: $color-active;
         text-decoration: underline;
     }
-    @media (max-width: 412px) {
+    @media (max-width: 600px) {
         font-size: 1.5rem;
     }
 }
@@ -219,8 +219,10 @@
 }
 
 .designed__rss {
-    @media (max-width: 412px) {
-        align-self: flex-end;
+    @media (max-width: 600px) {
         margin-bottom: 30px;
+    }
+    @include media-mobile {
+        align-self: flex-end;
     }
 }
