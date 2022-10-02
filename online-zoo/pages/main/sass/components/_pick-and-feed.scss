@@ -4,6 +4,12 @@
     @include media-desktopsmall {
         padding: 30px 0 50px;
     }
+    @include media-tablet {
+        padding: 20px 0;
+    }
+    @include media-mobile {
+        padding: 20px 10px;
+    }
 }
 
 .pick-and-feed__title {
@@ -13,10 +19,22 @@
     @include media-desktopsmall {
         margin-bottom: 24px;
     }
+    @include media-tablet {
+        font-size: 4.2rem;
+        margin-bottom: 21px;
+        align-self: center;
+    }
+    @media (max-width: 412px) {
+        margin-bottom: 10px;
+        font-size: 2.4rem;
+    }
 }
 
 .pick-and-feed__text {
     padding-left: 99px;
+    @include media-desktopsmall {
+        padding-left: 0;
+    }
 }
 
 .pick-and-feed__big-text {
@@ -24,6 +42,15 @@
     @include media-desktopsmall {
         margin-bottom: 23px;
         margin-left: 0;
+    }
+    @include media-tablet {
+        font-size: 2.2rem;
+    }
+    @media (max-width: 412px) {
+        font-size: 1.8rem;
+        text-align: center;
+        line-height: 120%;
+        margin-bottom: 18px;
     }
 }
 
@@ -35,6 +62,12 @@
         margin-bottom: 11px;
         margin-left: 0;
         margin-right: 30px;
+    }
+    @include media-tablet {
+        margin-right: 0;
+    }
+    @include media-mobile {
+        display: none;
     }
 }
 
@@ -57,18 +90,32 @@
         margin-bottom: 45px;
         margin-left: 0;
     }
+    @include media-tablet {
+        margin-bottom: 33px;
+    }
+    @include media-mobile {
+        display: none;
+    }
 }
 
 .pick-and_feed__subtitle {
     text-align: center;
     margin-bottom: 46px;
+    @include media-tablet {
+        margin-bottom: 27px;
+        align-self: center;
+    }
+    @media (max-width: 412px) {
+        font-size: 2.4rem;
+        margin-bottom: 17px;
+    }
 }
 
 .widjet {
     @include flex($align: flex-start);
     flex-direction: column;
+    position: relative;
     max-width: 168px;
-    align-self: flex-start;
 }
 
 .square {
@@ -79,6 +126,7 @@
     background: $color-text;
     border-radius: 5px;
     margin-bottom: 30px;
+    z-index: -1;
     &::before {
         content: '';
         position: absolute;
@@ -94,8 +142,50 @@
         -webkit-mask-composite: destination-out;
         mask-composite: exclude;
     }
+    @media (max-width: 628px) {
+        margin-bottom: 10px;
+    }
 }
 
 .feed {
     @include flex();
+}
+
+.pay {
+    @media (max-width: 628px) {
+        margin-bottom: 42px;
+    }
+}
+
+.zoo {
+    @media (max-width: 628px) {
+        margin-bottom: 29px;
+    }
+}
+
+.pay::before,
+.zoo::before {
+    @include media-tablet {
+        content: url('../../../assets/icons/main/how\ it\ works/arrow-green.svg');
+        position: absolute;
+        width: 93px;
+        top: -18px;
+        right: -36%;
+    }
+    @media (max-width: 628px) {
+        transform: rotate(83deg);
+        top: calc(100% - 10px);
+    }
+}
+
+.pay::before {
+    @media (max-width: 628px) {
+        top: calc(100% - 10px);
+    }
+}
+
+.zoo::before {
+    @media (max-width: 628px) {
+        top: calc(100% - 24px);
+    }
 }

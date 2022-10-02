@@ -15,7 +15,7 @@
     height: 10px;
     cursor: pointer;
     z-index: 10;
-    @media (max-width: 768px) {
+    @include media-tablet {
         display: inline-block;
         transition: transform .4s ease;
     }
@@ -38,13 +38,29 @@
 }
 
 .hamburger.active::before {
-    transform: rotate(38deg);
+    transform: rotate(40deg);
     top: 4px;
 }
 
 .hamburger.active::after {
-    transform: rotate(-38deg);
+    transform: rotate(-40deg);
     bottom: 4px;
+}
+
+.hamburger__line.active {
+    transform: scale(0);
+}
+
+.hamburger.active::before {
+    transform: rotate(40deg);
+    top: 4px;
+    background-color: $color-black;
+}
+
+.hamburger.active::after {
+    transform: rotate(-40deg);
+    bottom: 4px;
+    background-color: $color-black;
 }
 
 .hamburger__line.active {

@@ -1,7 +1,7 @@
 const dots = document.querySelectorAll('.big-dot');
 const smallDots = document.querySelectorAll('.count__dot');
 const labels = document.querySelectorAll('.sum');
-
+let mql = window.matchMedia('(max-width: 600px)');
 
 dots.forEach(dot => {
     dot.addEventListener('click', () => {
@@ -20,6 +20,13 @@ dots.forEach(dot => {
         }
     });
 })
+
+if(mql.matches) {
+    dots[4].classList.add('active');
+    smallDots[4].setAttribute('checked', true);
+    labels[4].classList.add('active');
+    labels[4].firstElementChild.classList.add('active');
+}
 
 //burger-menu
 

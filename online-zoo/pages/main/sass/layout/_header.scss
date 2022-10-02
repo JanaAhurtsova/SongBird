@@ -2,7 +2,18 @@
     position: relative;
     padding: 14px 0;
     background: $color-black;
+    width: 100%;
     z-index: 10;
+    @include media-tablet {
+        position: fixed;
+        top: 0;
+        padding: 2.3px 0 2.7px;
+    }
+    & .wrapper {
+        @include media-tablet {
+            @include flex($justify: space-between);
+        }
+    }
 }
 
 .menu {
@@ -12,6 +23,14 @@
     padding: 0;
     @include media-desktopsmall {
         gap: 4.8rem;
+    }
+    @include media-tablet {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-top: 30px;
+        margin-bottom: 15px;
+
     }
 }
 
@@ -30,6 +49,9 @@
     &:active {
         color: $color-btn-hover-active;
     }
+    @include media-tablet {
+        color: $color-black-blue;
+    }
 }
 
 .designed {
@@ -47,6 +69,9 @@
     }
     &:active {
         color: $color-btn-hover-active;
+    }
+    @include media-tablet {
+        color: $color-black-blue;
     }
 }
 
