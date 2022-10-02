@@ -15,7 +15,7 @@
     height: 10px;
     cursor: pointer;
     z-index: 10;
-    @include media-tablet {
+    @media (max-width: 680px) {
         display: inline-block;
         transition: transform .4s ease;
     }

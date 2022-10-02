@@ -1,7 +1,7 @@
 const dots = document.querySelectorAll('.big-dot');
 const smallDots = document.querySelectorAll('.count__dot');
 const labels = document.querySelectorAll('.sum');
-let mql = window.matchMedia('(max-width: 600px)');
+let mql = window.matchMedia('(max-width: 640px)');
 
 dots.forEach(dot => {
     dot.addEventListener('click', () => {
@@ -21,12 +21,29 @@ dots.forEach(dot => {
     });
 })
 
-if(mql.matches) {
-    dots[4].classList.add('active');
-    smallDots[4].setAttribute('checked', true);
-    labels[4].classList.add('active');
-    labels[4].firstElementChild.classList.add('active');
+function activeMedia() {
+    if(mql.matches) {
+        dots[2].classList.remove('active');
+        smallDots[2].removeAttribute('checked');
+        labels[2].classList.remove('active');
+        labels[2].firstElementChild.classList.remove('active');
+        dots[4].classList.add('active');
+        smallDots[4].setAttribute('checked', true);
+        labels[4].classList.add('active');
+        labels[4].firstElementChild.classList.add('active');
+    } else {
+        dots[4].classList.remove('active');
+        smallDots[4].removeAttribute('checked');
+        labels[4].classList.remove('active');
+        labels[4].firstElementChild.classList.remove('active');
+        dots[2].classList.add('active');
+        smallDots[2].setAttribute('checked', true);
+        labels[2].classList.add('active');
+        labels[2].firstElementChild.classList.add('active');
+    }
 }
+
+window.addEventListener('resize', activeMedia);
 
 //burger-menu
 
