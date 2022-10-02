@@ -2,7 +2,7 @@
     position: relative;
     padding: 14px 0;
     background: $color-black;
-    width: 100vw;
+    width: 100%;
     z-index: 10;
     @include media-tablet {
         position: fixed;
