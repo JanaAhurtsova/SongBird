@@ -14,7 +14,7 @@
     width: 18px;
     height: 10px;
     cursor: pointer;
-    z-index: 10;
+    z-index: 11;
     @include media-tablet {
         display: inline-block;
     }
@@ -39,34 +39,15 @@
 .hamburger.active::before {
     transform: rotate(40deg);
     top: 4px;
-    background-color: $color-black;
+    background-color: $color-black-blue;
 }
 
 .hamburger.active::after {
     transform: rotate(-40deg);
     bottom: 4px;
-    background-color: $color-black;
+    background-color: $color-black-blue;
 }
 
 .hamburger__line.active {
     transform: scale(0);
-}
-
-.hamburger__overlay {
-    display: none;
-    position:fixed;
-    top: 0;
-    right: -100%;
-    width: 100vw;
-    height: 100vh;
-    z-index: 9;
-    background-color: rgba(0, 0, 0, 0.25);
-}
-
-.hamburger_overlay.active {
-    display: block;
-    margin: 0 auto;
-    width: 100%;
-    min-height: 100%;
-    right: 0;
 }

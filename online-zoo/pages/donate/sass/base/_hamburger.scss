@@ -14,7 +14,7 @@
     width: 18px;
     height: 10px;
     cursor: pointer;
-    z-index: 10;
+    z-index: 11;
     @include media-tablet {
         display: inline-block;
         transition: transform .4s ease;
@@ -54,13 +54,13 @@
 .hamburger.active::before {
     transform: rotate(40deg);
     top: 4px;
-    background-color: $color-black;
+    background-color: $color-black-blue;
 }
 
 .hamburger.active::after {
     transform: rotate(-40deg);
     bottom: 4px;
-    background-color: $color-black;
+    background-color: $color-black-blue;
 }
 
 .hamburger__line.active {
