@@ -19,3 +19,6 @@ overlay.addEventListener('click', () => {
     overlay.classList.remove('active');
 })
 
+// carousel with pets 
+
+const carousel = document.querySelector('.carousel');
