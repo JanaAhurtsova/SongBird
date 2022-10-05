@@ -90,6 +90,7 @@
 }
 
 .wrapper__testimonials {
+    overflow: hidden;
     @include media-tablet {
         @include flex();
         flex-direction: column;
