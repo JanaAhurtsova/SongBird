@@ -97,6 +97,12 @@
     }
 }
 
+.feedback-wrapper {
+    position: relative;
+    transition: all .4s linear;
+    padding-left: 2px;
+}
+
 .wrapper__footer {
     @include flex($justify: space-between, $align: stretch);
     @include media-tablet {

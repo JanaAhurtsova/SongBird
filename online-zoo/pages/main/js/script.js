@@ -1,23 +1,23 @@
-// //burger-menu
+//burger-menu
 
-// const hamburger = document.querySelector('.hamburger');
-// const hamburgerLine = document.querySelector('.hamburger__line');
-// const burgerMenu = document.querySelector('.wrapper__header');
-// const overlayBurger = document.querySelector('.overlay__burger');
+const hamburger = document.querySelector('.hamburger');
+const hamburgerLine = document.querySelector('.hamburger__line');
+const burgerMenu = document.querySelector('.wrapper__header');
+const overlayBurger = document.querySelector('.overlay__burger');
 
-// hamburger.addEventListener('click', () => {
-//     hamburger.classList.toggle('active');
-//     hamburgerLine.classList.toggle('active');
-//     burgerMenu.classList.toggle('active');
-//     overlayBurger.classList.toggle('active');
-// })
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    hamburgerLine.classList.toggle('active');
+    burgerMenu.classList.toggle('active');
+    overlayBurger.classList.toggle('active');
+})
 
-// overlayBurger.addEventListener('click', () => {
-//     hamburger.classList.remove('active');
-//     hamburgerLine.classList.remove('active');
-//     burgerMenu.classList.remove('active');
-//     overlayBurger.classList.remove('active');
-// })
+overlayBurger.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    hamburgerLine.classList.remove('active');
+    burgerMenu.classList.remove('active');
+    overlayBurger.classList.remove('active');
+})
 
 // carousel with pets 
 import { pets } from './pets.js';
@@ -28,10 +28,7 @@ const itemRight = document.querySelector('.item-right');
 const item = document.querySelector('.item');
 const prev = document.querySelector('.arrow__left');
 const next = document.querySelector('.arrow__right');
-let mqlBig = window.matchMedia('(max-width: 1600px)');
-let mqlSmall = window.matchMedia('(max-width: 1000px)');
-let mqlTablet = window.matchMedia('(max-width: 432px)');
-let mqlMobile = window.matchMedia('(max-width: 320px)');
+
 
 const generateCards = () => {
     let cards = [];
@@ -41,19 +38,10 @@ const generateCards = () => {
   return cards;
 }
 
-// window.onload = function() {
-//     // Render Cards
-//     if(pets) {
-//         renderCardsToDomLeft();
-//         renderCardsToDomRight();
-//     }
-// }
-
 const renderCardsToDomLeft = () => {
     generateCards().sort(() => Math.random() - 0.5).splice(0, 6).forEach(card => {
         itemLeft.append(card.generateCard());
     })
-    console.log(itemLeft)
 }
 renderCardsToDomLeft();
 
@@ -61,7 +49,6 @@ const renderCardsToDomRight = () => {
     generateCards().sort(() => Math.random() - 0.5).splice(0, 6).forEach(card => {
         itemRight.append(card.generateCard());
     })
-    console.log(itemRight)
 }
 renderCardsToDomRight()
 
@@ -93,7 +80,7 @@ carousel.addEventListener('animationend', (animationEvent) => {
         const rightItems = itemRight.innerHTML;
         item.innerHTML = rightItems;
     }
-    
+
     changeItem.innerHTML = '';
     generateCards().sort(() => Math.random() - 0.5).splice(0, 6).forEach(card => {
         changeItem.append(card.generateCard());
@@ -108,27 +95,15 @@ import { Article } from './articles.js';
 import { Modal } from './modal.js';
 import { data } from './feedbacks.js';
 const range = document.querySelector('.testimonial__scroll');
-
-window.onload = function() {
-
-    // Render Articles
-
-    if(data) {
-        renderArticlesToDom();
-    }
-}
-
-const renderArticlesToDom = () => {
-    let feedbackWrapper = getFeedbackWrapper();
-    generateArticles(data).forEach(article => {
-        feedbackWrapper.append(article.generateArticle());
-    })
-}
+const feedbackCarousel = document.querySelector('.feedback-wrapper');
+let mqlBig = window.matchMedia('(max-width: 1600px)');
+let mqlSmall = window.matchMedia('(max-width: 900px)');
+let mqlMobile = window.matchMedia('(max-width: 320px)');
+let width;
 
 const getFeedbackWrapper = () => {
-    const feedbackContainer = document.querySelector('.feedback-wrapper');
-    feedbackContainer.innerHTML = '';
-    return feedbackContainer;
+    feedbackCarousel.innerHTML = '';
+    return feedbackCarousel;
 }
 
 const generateArticles = (data) => {
@@ -139,9 +114,36 @@ const generateArticles = (data) => {
     return articles;
 }
 
-const feedbacks =generateArticles(data);
-let width = feedbacks[0].offsetWidth
-function feedbacksTransform() {
-
+window.onload = function() {
+    // Render Articles
+    if(data) {
+        renderArticlesToDom();
+    }
 }
-window.addEventListener("resize", e => (width = feedbacks[0].offsetWidth));
+
+const renderArticlesToDom = () => {
+    let feedbackWrapper = getFeedbackWrapper();
+    generateArticles(data).forEach(article => {
+        feedbackWrapper.append(article.generateArticle());
+    })
+    width = feedbackWrapper.firstElementChild.offsetWidth;
+}
+
+const feedbacksMove = () => {
+    let value;
+    let gap;
+    if(mqlBig.matches) {
+        gap = 30;
+        value = (width + gap) * range.value;
+    }
+    if(mqlSmall.matches) {
+        gap = 19;
+        value = (width + gap) * range.value;
+    }
+    feedbackCarousel.style.left = `-${value}px`;
+}
+feedbacksMove()
+
+range.addEventListener('input', feedbacksMove)
+window.addEventListener("resize", renderArticlesToDom);
+
