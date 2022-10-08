@@ -98,13 +98,8 @@ const range = document.querySelector('.testimonial__scroll');
 const feedbackCarousel = document.querySelector('.feedback-wrapper');
 let mqlBig = window.matchMedia('(max-width: 1600px)');
 let mqlSmall = window.matchMedia('(max-width: 900px)');
-let mqlMobile = window.matchMedia('(max-width: 320px)');
+let mqlTablet = window.matchMedia('(max-width: 640px)');
 let width;
-
-const getFeedbackWrapper = () => {
-    feedbackCarousel.innerHTML = '';
-    return feedbackCarousel;
-}
 
 const generateArticles = (data) => {
     let articles = [];
@@ -121,12 +116,19 @@ window.onload = function() {
     }
 }
 
+const getFeedbackWrapper = () => {
+    feedbackCarousel.innerHTML = '';
+    return feedbackCarousel;
+}
+
 const renderArticlesToDom = () => {
     let feedbackWrapper = getFeedbackWrapper();
-    generateArticles(data).forEach(article => {
+    generateArticles(data).reverse().forEach(article => {
         feedbackWrapper.append(article.generateArticle());
     })
     width = feedbackWrapper.firstElementChild.offsetWidth;
+
+    addArticleClickHandler();
 }
 
 const feedbacksMove = () => {
@@ -147,3 +149,25 @@ feedbacksMove()
 range.addEventListener('input', feedbacksMove)
 window.addEventListener("resize", renderArticlesToDom);
 
+const addArticleClickHandler = () => {
+    if( mqlTablet.matches) {
+        feedbackCarousel.addEventListener('click', (e) => {
+            if(e.target.closest('.testimonial')) {
+                let clickedArticleId = e.target.closest('.testimonial').getAttribute('data-id');
+                let clickedArticleData = getClickedData(clickedArticleId);
+    
+                renderArticleModalWindow(clickedArticleData);
+            }
+        })
+    }
+    
+}
+
+const getClickedData = (id) => {
+    return data.find(article => article.id == id)
+}
+
+const renderArticleModalWindow = (article) => {
+    let modal =  new Modal ('modal', article);
+    modal.buildModal();
+}

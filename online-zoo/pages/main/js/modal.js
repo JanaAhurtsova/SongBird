@@ -1,18 +1,48 @@
 export class Modal {
-    constructor(classes) {
-        this.classes = classes;
-        this.modal = '';
-        this.modalContent = '';
-        this.modalCloseBtn = '';
-        this.overlay = '';
+    constructor({id, urlToIcon, name, location, time, feedback}) {
+        this.id = id;
+        this.urlToIcon = urlToIcon;
+        this.name = name;
+        this.location = location;
+        this.time = time;
+        this.feedback = feedback;
     }
 
-    buildModal(content) {
+    // Modal generator
+    generateContent() {
+        let template = '';
+        let article = document.createElement('div');
+        article.className = 'testimonial__modal';
+      
+            template += ` <div class="user"> `
+            this.urlToIcon &&
+            (template += `<img src=${this.urlToIcon} class="testimonial__icon" alt="user">`);
+                
+                template += `<div class="user-name">`
+                    this.name &&
+                    (template += `<h5 class="name">${this.name}</h5>`)
+
+                    this.location &&
+                    (template += `<p class="location">${this.location} 
+                    <span> • </span> ${this.time}</p>`)
+                template += `</div>`
+            template += `</div>`
+
+            this.feedback &&
+            (template += `<div class="feedback__text__modal">${this.feedback}</div>`)
+
+        article.innerHTML = template;
+        return article;
+    }
+
+    buildModal() {
+        let content = this.generateContent();
+
         //Overlay
         this.overlay = this.createDomNode(this.overlay, 'div', 'overlay__modal');
 
         //Modal
-        this.modal = this.createDomNode(this.modal, 'div', 'modal', this.classes);
+        this.modal = this.createDomNode(this.modal, 'div', 'modal');
 
         //Modal content
         this.modalContent = this.createDomNode(this.modalContent, 'div', 'modal__content');
@@ -77,7 +107,6 @@ export class Modal {
 
         // Open Modal
         this.openModal();
-
     }
 
     createDomNode (node, element, ...classes){
@@ -107,7 +136,6 @@ export class Modal {
     }
 
     openModal() {
-        console.log(this.overlay);
         document.body.append(this.overlay);
     }
 
