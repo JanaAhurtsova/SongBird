@@ -70,6 +70,7 @@
         cursor: pointer;
     }
     @include media-mobile {
+        width: 98%;
         padding: 8px 27px 15px 12px;
     }
 }

@@ -155,12 +155,11 @@ const addArticleClickHandler = () => {
             if(e.target.closest('.testimonial')) {
                 let clickedArticleId = e.target.closest('.testimonial').getAttribute('data-id');
                 let clickedArticleData = getClickedData(clickedArticleId);
-    
+
                 renderArticleModalWindow(clickedArticleData);
             }
         })
     }
-    
 }
 
 const getClickedData = (id) => {

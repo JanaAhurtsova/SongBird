@@ -1,5 +1,5 @@
 export class Modal {
-    constructor({id, urlToIcon, name, location, time, feedback}) {
+    constructor(classes, {id, urlToIcon, name, location, time, feedback}) {
         this.id = id;
         this.urlToIcon = urlToIcon;
         this.name = name;
