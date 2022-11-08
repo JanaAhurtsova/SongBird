@@ -1,7 +1,7 @@
 import birdsData from "./birds.js";
+import num from "./game.js";
 
-let num = 0;
-const playNum = Math.ceil(Math.random() * (6 - 1) + 1);
+const playNum = Math.floor(Math.random() * 6);
 const play = document.querySelector(".play");
 const seekBar = document.querySelector(".seekbar");
 const timer = document.querySelector(".timer");
@@ -83,5 +83,5 @@ audio.addEventListener("timeupdate", updateProgress);
 
 
 
-export { num, playNum, audio, play, playAudio };
+export { playNum, audio, play, duration };
 

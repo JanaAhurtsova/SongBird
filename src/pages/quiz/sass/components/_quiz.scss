@@ -49,8 +49,10 @@
   width: 180px;
   height: 150px;
   border: 1px solid $color-border;
-  background: url("https://yt3.ggpht.com/LTHQBe_VMPMnyj4T9BsD48sYleQJkdHrIRmWnCGdgFNjp0NxMpRuLN_BGmm4FTVberHceUsUVQ=s900-c-k-c0x00ffffff-no-rj")
-    center center/cover no-repeat;
+  background: url("../../../assets/quiz/bird.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border-radius: 5px;
   @media (max-width: 600px) {
     width: 140px;
