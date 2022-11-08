@@ -1,0 +1,52 @@
+.player__icon {
+  padding: 0;
+  cursor: pointer;
+}
+
+.play,
+.play__card {
+  width: 40px;
+  height: 40px;
+  background: url("../../../assets/quiz/sound/play.svg") center center/cover
+    no-repeat;
+  margin-bottom: 15px;
+  @include media-tablet {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.pause {
+  width: 40px;
+  height: 40px;
+  background: url("../../../assets/quiz/sound/pause.svg") center center/cover
+    no-repeat;
+  @include media-tablet {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.volume__icon {
+  width: 30px;
+  height: 30px;
+  background: url("../../../assets/quiz/sound/volume.svg") center center/cover
+    no-repeat;
+  filter: invert(1);
+  @include media-tablet {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.mute__icon {
+  width: 30px;
+  height: 30px;
+  background: url("../../../assets/quiz/sound/mute.svg") center center/cover
+    no-repeat;
+  filter: invert(1);
+  @include media-tablet {
+    width: 20px;
+    height: 20px;
+  }
+}

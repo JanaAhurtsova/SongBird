@@ -1,0 +1,113 @@
+.main {
+  padding: 20px 0;
+  @media (max-width: 680px) {
+    padding: 0;
+  }
+}
+
+.title {
+  margin: 0;
+  color: $color-second-brand;
+  font-family: "Permanent Marker";
+  font-size: 12rem;
+  line-height: 140%;
+  text-align: center;
+  -webkit-text-stroke: 1px white;
+  & span {
+    color: $color-brand;
+  }
+  @media (max-width: 1600px) {
+    font-size: 10rem;
+  }
+  @media (max-width: 1200px) {
+    font-size: 7rem;
+  }
+  @media (max-width: 1000px) {
+    margin-bottom: 20px;
+    font-size: 5rem;
+    line-height: 130%;
+  }
+  @media (max-width: 500px) {
+    font-size: 4rem;
+  }
+}
+
+.about {
+  @include flex($justify: space-between);
+  width: 100%;
+  @include media-tablet {
+    flex-direction: column;
+  }
+}
+
+.bird {
+  width: 35%;
+  height: 680px;
+  background: url("../../../assets/main/bird.png") center center/contain
+    no-repeat;
+  filter: drop-shadow(0 0 5px #fff)
+          drop-shadow(0 0 10px #fff)
+          drop-shadow(0 0 20px #fff)
+          drop-shadow(0 0 30px $color-brand)
+          drop-shadow(0 0 50px $color-brand)
+          drop-shadow(0 0 60px $color-brand);
+  @media (max-width: 680px) {
+    width: 90%;
+    height: 350px;
+    filter: drop-shadow(0 0 5px #fff)
+          drop-shadow(0 0 10px #fff)
+          drop-shadow(0 0 20px $color-brand)
+          drop-shadow(0 0 30px $color-brand)
+          drop-shadow(0 0 40px $color-brand);
+  }
+}
+
+.start {
+  @include flex();
+  flex-direction: column;
+  padding: 25px;
+}
+
+.greeting {
+  margin: 0;
+  font-family: Neucha;
+  font-size: 4rem;
+  line-height: 200%;
+  color: $color-text;
+  text-align: center;
+  & span {
+    color: $color-second-brand;
+  }
+  @media (max-width: 1440px) {
+    font-size: 3rem;
+  }
+  @media (max-width: 1000px) {
+    font-size: 2rem;
+  }
+}
+
+.form__btn {
+  width: 50%;
+}
+
+.start__btn {
+  width: 100%;
+  padding: 20px 0;
+  margin-top: 20px;
+  border: none;
+  border-radius: 10px;
+  font-family: Neucha;
+  font-size: 3rem;
+  cursor: pointer;
+  background-color: $color-brand;
+  color: $color-text;
+  transition: .3s;
+  &:hover {
+    background-color: $color-second-brand;
+    color: $color-background;
+  }
+  @media (max-width: 1000px) {
+    padding: 10px 0;
+    font-size: 1.6rem;
+  }
+}

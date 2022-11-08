@@ -1,0 +1,20 @@
+.player__icon {
+  padding: 0;
+  cursor: pointer;
+  border: 0;
+}
+
+.play {
+  width: 30px;
+  height: 30px;
+  background: url("../../../assets/quiz/sound/play.svg") center center/contain
+    no-repeat;
+  margin-bottom: 15px;
+}
+
+.pause {
+  width: 30px;
+  height: 30px;
+  background: url("../../../assets/quiz/sound/pause.svg") center center/contain
+    no-repeat;
+}
