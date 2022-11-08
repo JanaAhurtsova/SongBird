@@ -1,0 +1,97 @@
+.sound {
+  width: 85%;
+}
+
+.player {
+  @include flex($justify: space-between);
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.player__card {
+  flex-wrap: nowrap;
+}
+
+.progress-bar {
+  @include flex($align: stretch);
+  width: 92%;
+  flex-direction: column;
+  @media (max-width: 900px) {
+    width: 85%;
+  }
+  @media (max-width: 500px) {
+    width: 75%;
+  }
+}
+
+.progress-bar__card {
+  width: 85%;
+  @media (max-width: 900px) {
+    width: 75%;
+  }
+  @include media-tablet {
+    width: 85%;
+  }
+  @media (max-width: 440px) {
+    width: 80%;
+  }
+}
+
+.seekbar {
+  @include flex($justify: flex-start);
+  width: 100%;
+  height: 4px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  background-color: $color-text;
+  cursor: pointer;
+}
+
+.fill {
+  height: 4px;
+  border-radius: 5px;
+  background-color: $color-brand;
+}
+
+.handle {
+  height: 8px;
+  width: 8px;
+  border-radius: 30%;
+  background-color: $color-brand;
+  transform: scale(1.5);
+}
+
+.player-time {
+  @include flex($justify: space-between);
+}
+
+.timer,
+.duration {
+  @include media-tablet {
+    font-size: 1.5rem;
+  }
+}
+
+.volume-container {
+  @include flex($justify: space-between);
+  width: 20%;
+  @include media-tablet {
+    width: 40%;
+  }
+}
+
+.volume {
+  width: 80%;
+  height: 4px;
+  background-color: $color-text;
+  border-radius: 3px;
+}
+
+.volume::-webkit-slider-thumb {
+  width: 6px;
+  height: 6px;
+  appearance: none;
+  border-radius: 30%;
+  background-color: $color-brand;
+  cursor: pointer;
+}

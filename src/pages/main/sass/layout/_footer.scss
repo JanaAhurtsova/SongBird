@@ -1,0 +1,39 @@
+.footer {
+  padding: 10px 0;
+  background-color: $color-background;
+  @media (max-width: 900px) {
+    padding: 5px 15px;
+  }
+}
+
+.rss {
+  width: 10%;
+  height: 30px;
+  background: url("../../../assets/rs_school_js.svg") center center/contain no-repeat;
+  filter: invert(1);
+  @include media-mobile {
+    width: 12%;
+  }
+}
+
+.year {
+  margin-left: -5%;
+  color: $color-text;
+  font-size: 2rem;
+  font-weight: 700;
+  @include media-tablet {
+    font-size: 1.4rem;
+    margin-left: -2%;
+  }
+}
+
+.github {
+  width: 5%;
+  height: 30px;
+  background: url("../../../assets/github.svg") center center/contain no-repeat;
+  filter: invert(1);
+  @media (max-width: 900px) {
+    width: 5%;
+    height: 20px;
+  }
+}

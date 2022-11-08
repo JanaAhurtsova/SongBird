@@ -1,0 +1,105 @@
+.gallery {
+  padding: 7px 20px 0;
+}
+
+.gallery__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  padding: 15px 0;
+  @include media-tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 540px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  @include flex($align: stretch, $justify: flex-start);
+  padding: 10px;
+  flex-direction: column;
+  border: 1px solid $color-blocks;
+  border-radius: 10px;
+}
+
+.card__media {
+  @include flex($justify: space-between, $align: flex-start);
+  gap: 15px;
+}
+
+.bird__img {
+  width: 35%;
+  height:110px;
+  object-fit: cover;
+  border-radius: 7px;
+  @media (max-width: 950px) {
+    height:90px;
+  }
+}
+
+.bird-species {
+  @include flex($align: stretch);
+  width: 60%;
+  flex-direction: column;
+}
+
+.name,
+.species {
+  margin: 0 0 15px;
+  font-size: 2rem;
+  @media (max-width: 950px) {
+    margin: 0 0 8px;
+    font-size: 1.6rem;
+  }
+}
+
+.player {
+  @include flex($justify: flex-start);
+  flex-wrap: nowrap;
+  gap: 15px;
+}
+
+.progress-bar {
+  @include flex($align: stretch);
+  flex-direction: column;
+  width: 100%;
+}
+
+.seekbar {
+  @include flex($justify: flex-start);
+  width: 100%;
+  height: 4px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  background-color: $color-text;
+  cursor: pointer;
+}
+
+.fill {
+  height: 4px;
+  border-radius: 5px;
+  background-color: $color-brand;
+}
+
+.handle {
+  height: 6px;
+  width: 6px;
+  border-radius: 30%;
+  background-color: $color-brand;
+  transform: scale(1.5);
+}
+
+.player-time {
+  @include flex($justify: space-between);
+}
+
+.current-time,
+.duration {
+  font-size: 1.2rem;
+}
+
+.description {
+  margin: 8px 0 0;
+}

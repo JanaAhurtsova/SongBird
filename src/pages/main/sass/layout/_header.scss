@@ -1,0 +1,36 @@
+.header {
+  padding: 7px 20px;
+  background-color: $color-background;
+}
+
+.navigation {
+  width: 45%;
+  @media (max-width: 500px) {
+    width: 55%;
+  }
+}
+
+.menu__header {
+  @include flex($justify: space-between);
+  padding: 0;
+  margin: 0;
+}
+
+.menu__link {
+  color: $color-second-brand;
+  font-size: 2rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  transition: .3s;
+  &:hover,
+  &:active {
+    color: $color-active;
+  }
+  &.active {
+    color: $color-brand;
+  }
+  @include media-tablet {
+    font-size: 1.4rem;
+  }
+}
