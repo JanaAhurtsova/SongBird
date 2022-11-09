@@ -87,7 +87,7 @@ button.addEventListener('click', () => {
 
   correctAnswerWrapper.innerHTML = `<p class="text"> Прослушайте плеер. <br />
   Выберите верный ответ.</p>`;
-  document.querySelector('.name').textContent = '??????';
+  document.querySelector('.name').textContent = '* * * * * *';
   document.querySelector('.bird').style.backgroundImage = `url("../../assets/quiz/bird.jpg")`;
   duration.textContent = `00:00`;
 })

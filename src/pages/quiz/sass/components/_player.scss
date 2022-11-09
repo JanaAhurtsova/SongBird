@@ -5,7 +5,11 @@
 .player {
   @include flex($justify: space-between);
   width: 100%;
-  flex-wrap: wrap;
+  margin-top: 20px;
+  gap: 10px;
+  @media (max-width: 550px) {
+    margin-top: 5px;
+  }
 }
 
 .player__card {
@@ -14,27 +18,8 @@
 
 .progress-bar {
   @include flex($align: stretch);
-  width: 92%;
+  width: 100%;
   flex-direction: column;
-  @media (max-width: 900px) {
-    width: 85%;
-  }
-  @media (max-width: 500px) {
-    width: 75%;
-  }
-}
-
-.progress-bar__card {
-  width: 85%;
-  @media (max-width: 900px) {
-    width: 75%;
-  }
-  @include media-tablet {
-    width: 85%;
-  }
-  @media (max-width: 440px) {
-    width: 80%;
-  }
 }
 
 .seekbar {
@@ -68,7 +53,7 @@
 .timer,
 .duration {
   @include media-tablet {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 }
 
@@ -88,8 +73,8 @@
 }
 
 .volume::-webkit-slider-thumb {
-  width: 6px;
-  height: 6px;
+  width: 9px;
+  height: 9px;
   appearance: none;
   border-radius: 30%;
   background-color: $color-brand;

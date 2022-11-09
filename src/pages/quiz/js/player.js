@@ -25,6 +25,7 @@ const playAudio = () => {
     play.classList.remove("pause");
     isPlay = false;
   }
+  console.log(1)
 }
 
 function updateProgress() {
