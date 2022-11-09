@@ -1,10 +1,6 @@
 .footer {
-  flex: 0 0 auto;
-  padding: 10px 0;
+  padding: 15px 0;
   background-color: $color-background;
-  @media (max-width: 900px) {
-    padding: 5px 0 0;
-  }
   @include media-tablet {
     padding: 5px 0 0;
   }
@@ -17,7 +13,7 @@
     no-repeat;
   filter: invert(1);
   @include media-tablet {
-    width: 8%;
+    width: 12%;
   }
 }
 

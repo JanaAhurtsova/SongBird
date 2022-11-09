@@ -1,12 +1,10 @@
 import birdsData from "./birds.js";
-import { num, playNum } from "./player.js";
+import num from "./game.js";
 import { Option } from "./options.js";
 
 const options = document.querySelector(".options");
 
-export default options;
-
-function generateOptions(data, ind) {
+const generateOptions = (data, ind) => {
   let optionsArr = [];
   data[ind].forEach((option) => {
     optionsArr.push(new Option(option.id, option.name));
@@ -19,14 +17,16 @@ const getOptionsWrapper = () => {
   return options;
 };
 
-const renderOptionsToDom = () => {
+const renderOptionsToDom = (data, ind) => {
   const optionsWrapper = getOptionsWrapper();
-  generateOptions(birdsData, num).forEach((option) => {
+  generateOptions(data, ind).forEach((option) => {
     optionsWrapper.append(option.generateOption());
   });
 };
 
 window.onload = function () {
   // Render Options
-  renderOptionsToDom();
+  renderOptionsToDom(birdsData, num);
 };
+
+export { options, renderOptionsToDom };

@@ -1,13 +1,22 @@
 import { Article } from "./articles.js";
-import { num, playNum, audio, play } from "./player.js";
-import options from "./answer.js";
+import { playNum, audio, play, duration } from "./player.js";
+import { options, renderOptionsToDom } from "./answer.js";
 import birdsData from "./birds.js";
 
 const birdImg = document.querySelector(".bird");
 const birdName = document.querySelector(".name");
 const correctAnswerWrapper = document.querySelector(".correct-answer");
 const button = document.querySelector(".next-level");
+const topics = document.querySelectorAll('.list__item');
 let count = 5;
+let num = 0;
+export default num;
+
+(function setAttribute() {
+  for(let i = 0; i < 6; i++) {
+    topics[i].setAttribute('data-id', i)
+  }
+})()
 
 const getClickedData = (id) => {
   return birdsData[num].find(article => article.id == id)
@@ -61,5 +70,24 @@ options.addEventListener("click", checkAnswer);
 
 button.addEventListener('click', () => {
   num++;
+  count = 5;
 
+  topics.forEach(item => item.classList.remove('active'));
+  for(let item of topics) {
+    if(+(item.dataset.id) === num) item.classList.add('active');
+  }
+
+  getArticleWrapper();
+  renderOptionsToDom(birdsData, num);
+  options.addEventListener("click", checkAnswer);
+
+  audio.src = birdsData[num][playNum].audio;
+
+  button.setAttribute('disabled', true);
+
+  correctAnswerWrapper.innerHTML = `<p class="text"> Прослушайте плеер. <br />
+  Выберите верный ответ.</p>`;
+  document.querySelector('.name').textContent = '* * * * * *';
+  document.querySelector('.bird').style.backgroundImage = `url("../../assets/quiz/bird.jpg")`;
+  duration.textContent = `00:00`;
 })
