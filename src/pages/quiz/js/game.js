@@ -1,5 +1,6 @@
 import { Article } from "./articles.js";
-import { playNum, audio, play, duration, resetPlayer } from "./player.js";
+import { ResultsWin } from "./results.js";
+import { playNum, audio, duration, resetPlayer } from "./player.js";
 import { options, renderOptionsToDom } from "./answer.js";
 import birdsData from "./birds.js";
 
@@ -38,7 +39,7 @@ const renderArticle = (article) => {
 }
 
 //check the selected answer with the correct one
-function isWin(id, e) {
+const isWin = (id, e) => {
   if (birdsData[num][playNum].id === id) {
     birdImg.style.background = `url(${
       birdsData[num][id - 1].image
@@ -60,7 +61,7 @@ function isWin(id, e) {
 }
 
 //choice of answer
-function checkAnswer(e) {
+const checkAnswer = (e) => {
   if(e.target.closest(".option__item")) {
     const optionId = Number(e.target.closest(".option__item").dataset.id);
     let clickedArticleData = getClickedData(optionId);
@@ -70,34 +71,50 @@ function checkAnswer(e) {
   }
 }
 
-options.addEventListener("click", checkAnswer);
+const renderResultsIfWin = () => {
+  const youWin = new ResultsWin();
+  youWin.buildResultsIfWin();
+}
 
-//move to the next level and reset page
-button.addEventListener('click', () => {
-  num++;
-  count = 5;
+//next level or show results
+const nextLevel = () => {
+  if(num < 5) {
+    num++;
+    count = 5;
 
-  //set active to the next level
-  topics.forEach(item => item.classList.remove('active'));
-  for(let item of topics) {
-    if(+(item.dataset.id) === num) item.classList.add('active');
+    //set active to the next level
+    topics.forEach(item => item.classList.remove('active'));
+    for(let item of topics) {
+      if(+(item.dataset.id) === num) item.classList.add('active');
+    }
+
+    //update options
+    getArticleWrapper();
+    renderOptionsToDom(birdsData, num);
+    options.addEventListener("click", checkAnswer);
+
+    //reset player and set new sound
+    resetPlayer();
+    audio.src = birdsData[num][playNum].audio;
+    console.log(birdsData[num][playNum].name)
+
+    button.setAttribute('disabled', true);
+
+    //reset styles
+    correctAnswerWrapper.innerHTML = `<p class="text"> Прослушайте плеер. <br />
+    Выберите верный ответ.</p>`;
+    document.querySelector('.name').textContent = '* * * * * *';
+    document.querySelector('.bird').style.backgroundImage = `url("../../assets/quiz/bird.jpg")`;
+    duration.textContent = `00:00`;
+  } else if(num === 5) {
+    if(Number(document.querySelector('.points').textContent) === 30) {
+      document.querySelector('.game__wrapper').innerHTML = '';
+      renderResultsIfWin();
+    // } else {
+    //   renderResultsIfLost();
+    }
   }
+}
 
-  //update options
-  getArticleWrapper();
-  renderOptionsToDom(birdsData, num);
-  options.addEventListener("click", checkAnswer);
-
-  //reset player and set new sound
-  resetPlayer();
-  audio.src = birdsData[num][playNum].audio;
-
-  button.setAttribute('disabled', true);
-
-  //reset styles
-  correctAnswerWrapper.innerHTML = `<p class="text"> Прослушайте плеер. <br />
-  Выберите верный ответ.</p>`;
-  document.querySelector('.name').textContent = '* * * * * *';
-  document.querySelector('.bird').style.backgroundImage = `url("../../assets/quiz/bird.jpg")`;
-  duration.textContent = `00:00`;
-})
+options.addEventListener("click", checkAnswer); //select answer
+button.addEventListener('click', nextLevel); //move to the next level and reset page

@@ -21,3 +21,8 @@
   @include flex();
   position: relative;
 }
+
+.results__wrapper {
+  @include flex();
+  flex-direction: column;
+}

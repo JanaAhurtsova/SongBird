@@ -6,6 +6,7 @@
 }
 
 .title {
+  position: relative;
   margin: 0;
   color: $color-second-brand;
   font-family: "Permanent Marker";
@@ -13,6 +14,7 @@
   line-height: 100%;
   text-align: center;
   -webkit-text-stroke: .7px white;
+  z-index: 10;
   & span {
     color: $color-brand;
   }
@@ -67,12 +69,14 @@
 }
 
 .greeting {
+  position: relative;
   margin: 0;
   font-family: Neucha;
   font-size: 2.5rem;
   line-height: 200%;
   color: $color-text;
   text-align: center;
+  z-index: 10;
   & span {
     color: $color-second-brand;
   }

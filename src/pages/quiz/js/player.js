@@ -85,5 +85,5 @@ volumeIcon.addEventListener("click", muteSound);
 currentVolume.addEventListener("input", changeVolume);
 audio.addEventListener("timeupdate", updateProgress);
 
-export { playNum, audio, play, duration, resetPlayer };
+export { playNum, audio, duration, resetPlayer };
 
