@@ -15,6 +15,11 @@ const audio = new Audio();
 audio.src = birdsData[num][playNum].audio;
 audio.currentTime = 0;
 
+const resetPlayer = () => {
+    isPlay = false;
+    play.classList.remove("pause");
+}
+
 const playAudio = () => {
   if (!isPlay) {
     audio.play();
@@ -22,10 +27,8 @@ const playAudio = () => {
     isPlay = true;
   } else {
     audio.pause();
-    play.classList.remove("pause");
-    isPlay = false;
+    resetPlayer()
   }
-  console.log(1)
 }
 
 function updateProgress() {
@@ -82,7 +85,5 @@ volumeIcon.addEventListener("click", muteSound);
 currentVolume.addEventListener("input", changeVolume);
 audio.addEventListener("timeupdate", updateProgress);
 
-
-
-export { playNum, audio, play, duration };
+export { playNum, audio, play, duration, resetPlayer };
 

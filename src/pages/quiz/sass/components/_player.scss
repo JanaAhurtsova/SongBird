@@ -3,10 +3,10 @@
 }
 
 .player {
-  @include flex($justify: space-between);
+  @include flex();
   width: 100%;
   margin-top: 20px;
-  gap: 10px;
+  gap: 20px;
   @media (max-width: 550px) {
     margin-top: 5px;
   }
@@ -47,7 +47,7 @@
 }
 
 .player-time {
-  @include flex($justify: space-between);
+  @include flex();
 }
 
 .timer,
@@ -58,7 +58,7 @@
 }
 
 .volume-container {
-  @include flex($justify: space-between);
+  @include flex();
   width: 20%;
   @include media-tablet {
     width: 40%;

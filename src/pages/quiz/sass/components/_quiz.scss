@@ -3,7 +3,7 @@
 }
 
 .list-of-questions {
-  @include flex($justify: space-between);
+  @include flex();
   width: 100%;
   margin-bottom: 20px;
   gap: 5px;
@@ -20,8 +20,13 @@
   font-size: 2rem;
   background-color: $color-brand;
   text-align: center;
+  @media (max-width: 900px) {
+    width: 30%;
+    margin-bottom: 10px;
+  }
   @include media-tablet {
     font-size: 1.6rem;
+    padding: 10px 0;
   }
   @media (max-width: 405px) {
     font-size: 1.4rem;
@@ -29,14 +34,10 @@
   &.active {
     background-color: $color-active;
   }
-  @media (max-width: 900px) {
-    width: 30%;
-    margin-bottom: 10px;
-  }
 }
 
 .question {
-  @include flex($justify: space-between);
+  @include flex();
   padding: 20px 30px;
   border-radius: 5px;
   background-color: $color-blocks;
@@ -78,7 +79,7 @@
 }
 
 .answers {
-  @include flex($justify: space-between);
+  @include flex();
   margin: 20px 0;
   gap: 20px;
   @include media-tablet {
@@ -88,7 +89,7 @@
 }
 
 .options {
-  @include flex($align: flex-start);
+  @include flex($justify:center, $align: flex-start);
   position: relative;
   width: 40%;
   flex-direction: column;
@@ -123,6 +124,9 @@
   transition: .3s;
   &:hover {
     background-color: $color-brand;
+  }
+  @include media-tablet {
+    padding: 10px;
   }
 }
 
@@ -170,7 +174,7 @@
 }
 
 .card__media {
-  @include flex($justify: space-between, $align: flex-start);
+  @include flex($align: flex-start);
   gap: 15px;
   margin-bottom: 25px;
 }
@@ -180,12 +184,13 @@
   margin: 0;
   width: 30%;
   height: 100%;
+  max-height: 250px;
   border-radius: 10px;
   object-fit: cover;
 }
 
 .bird-species {
-  @include flex($align: stretch);
+  @include flex($align: stretch, $justify: center);
   width: 65%;
   flex-direction: column;
   gap: 15px;

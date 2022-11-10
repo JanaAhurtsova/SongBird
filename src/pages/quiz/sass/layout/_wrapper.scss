@@ -8,11 +8,16 @@
 }
 
 .header__wrapper {
-  @include flex($justify: space-between);
+  @include flex();
   position: relative;
 }
 
+.game__wrapper {
+  @include flex($align: stretch);
+  flex-direction: column;
+}
+
 .footer__wrapper {
-  @include flex($justify: space-between);
+  @include flex();
   position: relative;
 }
