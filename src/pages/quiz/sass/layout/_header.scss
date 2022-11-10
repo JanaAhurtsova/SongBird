@@ -12,7 +12,7 @@
 }
 
 .menu__header {
-  @include flex($justify: space-between);
+  @include flex();
   padding: 0;
   gap: 7px;
 }

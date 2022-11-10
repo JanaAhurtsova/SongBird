@@ -3,16 +3,15 @@
   cursor: pointer;
 }
 
-.play,
-.play__card {
+.play {
   width: 40px;
   height: 40px;
   background: url("../../../assets/quiz/icons/play.svg") center center/contain
     no-repeat;
   margin-bottom: 15px;
   @include media-tablet {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
   }
 }
 
@@ -22,8 +21,8 @@
   background: url("../../../assets/quiz/icons/pause.svg") center center/contain
     no-repeat;
   @include media-tablet {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
   }
 }
 
