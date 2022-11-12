@@ -42,7 +42,7 @@
   border-radius: 5px;
   background-color: $color-blocks;
   gap: 40px;
-  @include media-tablet{
+  @include media-tablet {
     padding: 10px;
     gap: 20px;
   }
@@ -89,7 +89,7 @@
 }
 
 .options {
-  @include flex($justify:center, $align: flex-start);
+  @include flex($justify: center, $align: flex-start);
   position: relative;
   width: 40%;
   flex-direction: column;
@@ -121,15 +121,15 @@
   padding: 25px;
   cursor: pointer;
   background-color: $color-blocks;
-  transition: .3s;
+  transition: 0.3s;
   &:hover {
     background-color: $color-brand;
   }
   @include media-tablet {
-    padding: 12px;
+    padding: 15px;
   }
   @media (max-width: 500px) {
-    padding: 10px 0;
+    padding: 12px;
   }
 }
 
@@ -140,7 +140,7 @@
     font-size: 1.8rem;
   }
   @media (max-width: 500px) {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 }
 

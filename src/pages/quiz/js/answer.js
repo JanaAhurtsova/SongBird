@@ -10,7 +10,7 @@ const generateOptions = (data, ind) => {
     optionsArr.push(new Option(option.id, option.name));
   });
   return optionsArr;
-}
+};
 
 const getOptionsWrapper = () => {
   options.innerHTML = "";

@@ -4,6 +4,7 @@ html {
   scroll-behavior: smooth;
 }
 
+html,
 .page {
   @include flex($align: stretch, $justify: space-between);
   min-height: 100vh;

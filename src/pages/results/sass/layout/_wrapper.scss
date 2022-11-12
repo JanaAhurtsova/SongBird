@@ -12,7 +12,17 @@
   position: relative;
 }
 
+.game__wrapper {
+  @include flex($align: stretch);
+  flex-direction: column;
+}
+
 .footer__wrapper {
   @include flex();
   position: relative;
+}
+
+.results__wrapper {
+  @include flex();
+  flex-direction: column;
 }
