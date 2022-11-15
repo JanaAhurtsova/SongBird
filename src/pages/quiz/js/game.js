@@ -2,15 +2,17 @@ import { Article } from "./articles.js";
 import { playNum, audio, duration, resetPlayer } from "./player.js";
 import { options, renderOptionsToDom } from "./answer.js";
 import birdsData from "./birds.js";
-import renderResultsIfWin from "../results/js/render.js";
-
+import {renderResultsIfWin, renderResultsIfLost} from "./render.js";
+// import bird from '../../../assets/quiz/bird.jpg';
 const birdImg = document.querySelector(".bird");
 const birdName = document.querySelector(".name");
 const correctAnswerWrapper = document.querySelector(".correct-answer");
 const button = document.querySelector(".next-level");
 const topics = document.querySelectorAll(".list__item");
+const score = document.querySelector(".points");
 let count = 5;
 let num = 0;
+let stopGame = false;
 export default num;
 
 //set data-id for the list of questions
@@ -48,7 +50,7 @@ const isWin = (id, e) => {
     audio.pause();
     audio.currentTime = 0;
     resetPlayer();
-    document.querySelectorAll(".option")[id - 1].classList.add("correct");
+    e.target.closest(".option__item").firstChild.classList.add("correct");
     document.querySelector(".audio__win").play();
     button.removeAttribute("disabled");
     document.querySelector(".points").textContent =
@@ -67,8 +69,9 @@ const checkAnswer = (e) => {
     const optionId = Number(e.target.closest(".option__item").dataset.id);
     let clickedArticleData = getClickedData(optionId);
     renderArticle(clickedArticleData);
-
-    isWin(optionId, e);
+    if(!stopGame && isWin(optionId, e) === true) {
+      stopGame = true;
+    }
   }
 };
 
@@ -87,28 +90,25 @@ const nextLevel = () => {
     //update options
     getArticleWrapper();
     renderOptionsToDom(birdsData, num);
-    options.addEventListener("click", checkAnswer);
+    stopGame = false;
 
     //reset player and set new sound
     resetPlayer();
     audio.src = birdsData[num][playNum].audio;
     console.log(birdsData[num][playNum].name);
-
     button.setAttribute("disabled", true);
 
     //reset styles
     correctAnswerWrapper.innerHTML = `<p class="text"> Прослушайте плеер. <br />
     Выберите верный ответ.</p>`;
-    document.querySelector(".name").textContent = "* * * * * *";
-    document.querySelector(
-      ".bird"
-    ).style.backgroundImage = `url("../../assets/quiz/bird.jpg")`;
+    birdName.textContent = "* * * * * *";
+    // birdImg.style.backgroundImage = `url(${bird})`;
     duration.textContent = `00:00`;
   } else if (num === 5) {
-    if (Number(document.querySelector(".points").textContent) === 30) {
-      renderResultsIfWin();
-      // } else {
-      //   renderResultsIfLost();
+    if(Number(score.textContent) === 30) {
+      renderResultsIfWin()
+    } else {
+      renderResultsIfLost(score.textContent);
     }
   }
 };

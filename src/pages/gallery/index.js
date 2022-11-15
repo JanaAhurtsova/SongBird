@@ -1,6 +1,5 @@
 import birdsData from "./js/birds.js";
 import { Article } from "./js/articles.js";
-import "./sass/main.scss";
 
 function renderArticles(data) {
   data.forEach((article) =>

@@ -1,6 +1,5 @@
 import birdsData from "./birds.js";
 import num from "./game.js";
-
 const playNum = Math.floor(Math.random() * 6);
 const play = document.querySelector(".play");
 const seekBar = document.querySelector(".seekbar");

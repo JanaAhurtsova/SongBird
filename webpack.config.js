@@ -14,9 +14,10 @@ const stylesHandler = MiniCssExtractPlugin.loader;
 
 const config = {
     entry: {
-      main: path.resolve(__dirname, './src/pages/main/index.js'),
-      quiz: path.resolve(__dirname, './src/pages/quiz/index.js'),
-      gallery: path.resolve(__dirname, './src/pages/gallery/index.js'),
+      main: [path.resolve(__dirname, './src/pages/main/index.js'), path.resolve(__dirname, './src/pages/main/sass/main.scss')],
+      quiz: [path.resolve(__dirname, './src/pages/quiz/index.js'), path.resolve(__dirname, './src/pages/quiz/sass/main.scss')],
+      gallery: [path.resolve(__dirname, './src/pages/gallery/index.js'),  path.resolve(__dirname, './src/pages/gallery/sass/main.scss')],
+      results: [path.resolve(__dirname, './src/pages/results/index.js'),  path.resolve(__dirname, './src/pages/results/sass/main.scss')],
     },
 
     devtool: 'source-map',
@@ -24,6 +25,7 @@ const config = {
     output: {
       filename: "[name].js",
       path: path.resolve(__dirname, 'dist'),
+      clean: true,
     },
 
     optimization: {
@@ -35,9 +37,11 @@ const config = {
     devServer: {
       open: true,
       host: 'localhost',
-      static: {
-        directory: path.join(__dirname, 'src/pages/main'),
-      },
+      static: [
+        path.join(__dirname, 'src/pages/main'),
+        path.join(__dirname, 'src/pages/gallery'),
+        path.join(__dirname, 'src/pages/quiz'),
+      ],
       compress: true,
       port: 9000,
     },
@@ -60,6 +64,12 @@ const config = {
           template: 'src/pages/gallery/index.html',
           filename: 'gallery.html',
           chunks: ["gallery"],
+        }),
+        new HtmlWebpackPlugin({
+          inject: true,
+          template: 'src/pages/results/index.html',
+          filename: 'results.html',
+          chunks: ["results"],
         }),
         new MiniCssExtractPlugin({
           filename: 'styles/[name].css',
