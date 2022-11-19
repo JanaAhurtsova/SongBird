@@ -1,5 +1,7 @@
 import birdsData from "./birds.js";
 import num from "./game.js";
+import {Article} from './articles.js';
+
 const playNum = Math.floor(Math.random() * 6);
 const play = document.querySelector(".play");
 const seekBar = document.querySelector(".seekbar");
@@ -20,6 +22,10 @@ const resetPlayer = () => {
 };
 
 const playAudio = () => {
+  document.querySelectorAll('.player__icon').forEach(item => item.classList.remove("pause"));
+  if(document.querySelector('.card__audio')) {
+    document.querySelector('.card__audio').pause();
+  }
   if (!isPlay) {
     audio.play();
     play.classList.add("pause");

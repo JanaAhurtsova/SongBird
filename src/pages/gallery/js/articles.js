@@ -137,6 +137,11 @@ export class Article {
   }
 
   playAudio() {
+    document.querySelectorAll('.card__audio').forEach(item => {
+      item.pause();
+      item.currentTime = 0;
+    })
+    document.querySelectorAll('.player__icon').forEach(button => button.classList.remove('pause'))
     if (!this.isPlay) {
       this.audioCard.play();
       this.isPlay = true;

@@ -22,7 +22,8 @@ export class ResultsWin {
     //Modal
     this.modal = this.createDomNode(this.modal, 'div', 'modal');
 
-    this.logo = this.createDomNode(this.logo, 'span', 'logo')
+    this.logo = this.createDomNode(this.logo, 'a', 'logo');
+    this.logo.href = "../main/index.html";
     this.logo.innerHTML = `Song<span>Bird</span>`;
 
     //Modal content

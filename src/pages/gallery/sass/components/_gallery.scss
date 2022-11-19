@@ -20,8 +20,9 @@
   @include flex($align: stretch, $justify: flex-start);
   padding: 10px;
   flex-direction: column;
-  border: 1px solid $color-blocks;
+  border: 1px solid $color-border;
   border-radius: 10px;
+  background-color: $color-blocks;
 }
 
 .card__media {

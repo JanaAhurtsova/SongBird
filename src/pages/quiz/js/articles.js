@@ -1,3 +1,5 @@
+import {resetPlayer, audio} from './player.js';
+
 export class Article {
   constructor({ id, name, species, description, image, audio }) {
     this.id = id;
@@ -133,6 +135,8 @@ export class Article {
   }
 
   playAudio() {
+    resetPlayer();
+    audio.pause();
     if (!this.isPlay) {
       this.audioCard.play();
       this.isPlay = true;

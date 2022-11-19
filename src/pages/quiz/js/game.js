@@ -3,7 +3,7 @@ import { playNum, audio, duration, resetPlayer } from "./player.js";
 import { options, renderOptionsToDom } from "./answer.js";
 import birdsData from "./birds.js";
 import {renderResultsIfWin, renderResultsIfLost} from "./render.js";
-// import bird from '../../../assets/quiz/bird.jpg';
+
 const birdImg = document.querySelector(".bird");
 const birdName = document.querySelector(".name");
 const correctAnswerWrapper = document.querySelector(".correct-answer");
@@ -51,14 +51,14 @@ const isWin = (id, e) => {
     audio.currentTime = 0;
     resetPlayer();
     e.target.closest(".option__item").firstChild.classList.add("correct");
-    document.querySelector(".audio__win").play();
+    document.querySelector('.correct__sound').play();
     button.removeAttribute("disabled");
     document.querySelector(".points").textContent =
       Number(document.querySelector(".points").textContent) + count;
     return true;
   }
   e.target.closest(".option__item").firstChild.classList.add("mistake");
-  document.querySelector(".audio__mistake").play();
+  document.querySelector('.mistake__sound').play();
   count--;
   return false;
 };
@@ -102,7 +102,7 @@ const nextLevel = () => {
     correctAnswerWrapper.innerHTML = `<p class="text"> Прослушайте плеер. <br />
     Выберите верный ответ.</p>`;
     birdName.textContent = "* * * * * *";
-    // birdImg.style.backgroundImage = `url(${bird})`;
+    birdImg.style.backgroundImage = `url("../../assets/quiz/bird.jpg")`;
     duration.textContent = `00:00`;
   } else if (num === 5) {
     if(Number(score.textContent) === 30) {
