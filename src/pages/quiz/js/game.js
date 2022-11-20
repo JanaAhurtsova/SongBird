@@ -1,28 +1,31 @@
 import { Article } from "./articles.js";
-import { playNum, audio, play, duration, resetPlayer } from "./player.js";
+import { playNum, audio, duration, resetPlayer } from "./player.js";
 import { options, renderOptionsToDom } from "./answer.js";
 import birdsData from "./birds.js";
+import {renderResultsIfWin, renderResultsIfLost} from "./render.js";
 
 const birdImg = document.querySelector(".bird");
 const birdName = document.querySelector(".name");
 const correctAnswerWrapper = document.querySelector(".correct-answer");
 const button = document.querySelector(".next-level");
-const topics = document.querySelectorAll('.list__item');
+const topics = document.querySelectorAll(".list__item");
+const score = document.querySelector(".points");
 let count = 5;
 let num = 0;
+let stopGame = false;
 export default num;
 
 //set data-id for the list of questions
 (function setAttribute() {
-  for(let i = 0; i < 6; i++) {
-    topics[i].setAttribute('data-id', i)
+  for (let i = 0; i < 6; i++) {
+    topics[i].setAttribute("data-id", i);
   }
-})()
+})();
 
 //get id of the data the same with clicked option
 const getClickedData = (id) => {
-  return birdsData[num].find(article => article.id == id)
-}
+  return birdsData[num].find((article) => article.id == id);
+};
 
 //clear wrapper for the card of bird
 const getArticleWrapper = () => {
@@ -33,12 +36,12 @@ const getArticleWrapper = () => {
 //render card of bird to DOM
 const renderArticle = (article) => {
   getArticleWrapper();
-  let card = new Article (article);
-  card.buildArticle()
-}
+  let card = new Article(article);
+  card.buildArticle();
+};
 
 //check the selected answer with the correct one
-function isWin(id, e) {
+const isWin = (id, e) => {
   if (birdsData[num][playNum].id === id) {
     birdImg.style.background = `url(${
       birdsData[num][id - 1].image
@@ -47,57 +50,68 @@ function isWin(id, e) {
     audio.pause();
     audio.currentTime = 0;
     resetPlayer();
-    document.querySelectorAll(".option")[id - 1].classList.add("correct");
-    document.querySelector(".audio__win").play();
-    button.removeAttribute('disabled');
-    document.querySelector('.points').textContent = Number(document.querySelector('.points').textContent) + count;
+    e.target.closest(".option__item").firstChild.classList.add("correct");
+    document.querySelector('.correct__sound').play();
+    button.removeAttribute("disabled");
+    document.querySelector(".points").textContent =
+      Number(document.querySelector(".points").textContent) + count;
     return true;
   }
-    e.target.closest(".option__item").firstChild.classList.add("mistake");
-    document.querySelector(".audio__mistake").play();
-    count--;
-    return false
-}
+  e.target.closest(".option__item").firstChild.classList.add("mistake");
+  document.querySelector('.mistake__sound').play();
+  count--;
+  return false;
+};
 
 //choice of answer
-function checkAnswer(e) {
-  if(e.target.closest(".option__item")) {
+const checkAnswer = (e) => {
+  if (e.target.closest(".option__item")) {
     const optionId = Number(e.target.closest(".option__item").dataset.id);
     let clickedArticleData = getClickedData(optionId);
     renderArticle(clickedArticleData);
-
-    isWin(optionId, e);
+    if(!stopGame && isWin(optionId, e) === true) {
+      stopGame = true;
+    }
   }
-}
+};
 
-options.addEventListener("click", checkAnswer);
+//next level or show results
+const nextLevel = () => {
+  if (num < 5) {
+    num++;
+    count = 5;
 
-//move to the next level and reset page
-button.addEventListener('click', () => {
-  num++;
-  count = 5;
+    //set active to the next level
+    topics.forEach((item) => item.classList.remove("active"));
+    for (let item of topics) {
+      if (+item.dataset.id === num) item.classList.add("active");
+    }
 
-  //set active to the next level
-  topics.forEach(item => item.classList.remove('active'));
-  for(let item of topics) {
-    if(+(item.dataset.id) === num) item.classList.add('active');
+    //update options
+    getArticleWrapper();
+    renderOptionsToDom(birdsData, num);
+    stopGame = false;
+
+    //reset player and set new sound
+    resetPlayer();
+    audio.src = birdsData[num][playNum].audio;
+    console.log(birdsData[num][playNum].name);
+    button.setAttribute("disabled", true);
+
+    //reset styles
+    correctAnswerWrapper.innerHTML = `<p class="text"> Прослушайте плеер. <br />
+    Выберите верный ответ.</p>`;
+    birdName.textContent = "* * * * * *";
+    birdImg.style.backgroundImage = `url("../../assets/quiz/bird.jpg")`;
+    duration.textContent = `00:00`;
+  } else if (num === 5) {
+    if(Number(score.textContent) === 30) {
+      renderResultsIfWin()
+    } else {
+      renderResultsIfLost(score.textContent);
+    }
   }
+};
 
-  //update options
-  getArticleWrapper();
-  renderOptionsToDom(birdsData, num);
-  options.addEventListener("click", checkAnswer);
-
-  //reset player and set new sound
-  resetPlayer();
-  audio.src = birdsData[num][playNum].audio;
-
-  button.setAttribute('disabled', true);
-
-  //reset styles
-  correctAnswerWrapper.innerHTML = `<p class="text"> Прослушайте плеер. <br />
-  Выберите верный ответ.</p>`;
-  document.querySelector('.name').textContent = '* * * * * *';
-  document.querySelector('.bird').style.backgroundImage = `url("../../assets/quiz/bird.jpg")`;
-  duration.textContent = `00:00`;
-})
+options.addEventListener("click", checkAnswer); //select answer
+button.addEventListener("click", nextLevel); //move to the next level and reset page

@@ -1,3 +1,15 @@
-# janaahurtsova-JSFE2022Q3
+# 🚀 Welcome to your new awesome project!
 
-Private repository for @janaahurtsova
+This project has been created using **webpack-cli**, you can now run
+
+```
+npm run build
+```
+
+or
+
+```
+yarn build
+```
+
+to bundle your application

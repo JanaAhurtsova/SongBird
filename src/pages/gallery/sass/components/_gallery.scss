@@ -20,8 +20,9 @@
   @include flex($align: stretch, $justify: flex-start);
   padding: 10px;
   flex-direction: column;
-  border: 1px solid $color-blocks;
+  border: 1px solid $color-border;
   border-radius: 10px;
+  background-color: $color-blocks;
 }
 
 .card__media {
@@ -31,11 +32,11 @@
 
 .bird__img {
   width: 35%;
-  height:110px;
+  height: 110px;
   object-fit: cover;
   border-radius: 7px;
   @media (max-width: 950px) {
-    height:90px;
+    height: 90px;
   }
 }
 

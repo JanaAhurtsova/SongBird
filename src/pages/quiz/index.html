@@ -6,26 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Song Bird</title>
     <link rel="icon" href="../../assets/favicon.ico" type="image/ico" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Neucha&family=Permanent+Marker&display=swap" 
-          rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Neucha&family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body class="page">
     <header class="header">
       <div class="wrapper header__wrapper">
-        <span class="logo">Song<span>Bird</span></span>
+        <a class="logo">Song<span>Bird</span></a>
         <nav class="navigation">
           <ul class="menu__header">
             <li class="menu__item">
               <a href="../main/index.html" class="menu__link">Главная</a>
             </li>
             <li class="menu__item">
-              <a href="../quiz/index.html" class="menu__link active">Викторина</a>
+              <a href="../quiz/index.html" class="menu__link active"
+                >Викторина</a
+              >
             </li>
             <li class="menu__item">
-              <a href="../gallery/" class="menu__link">Галерея</a>
+              <a href="../gallery/index.html" class="menu__link">Галерея</a>
             </li>
           </ul>
         </nav>
@@ -42,42 +46,46 @@
           <li class="list__item">Хищные птицы</li>
           <li class="list__item">Морские птицы</li>
         </ul>
-        <div class="game__wrapper">
-          <div class="question">
-            <div class="bird"></div>
-            <div class="sound">
-              <h2 class="name">* * * * * *</h2>
-              <hr />
-              <div class="player">
-                <button class="play player__icon"></button>
-                <div class="progress-bar">
-                  <div class="seekbar">
-                    <div class="fill"></div>
-                    <div class="handle"></div>
-                  </div>
-                  <div class="player-time">
-                    <div class="timer">00:00</div>
-                    <div class="duration">00:00</div>
-                  </div>
+        <div class="question">
+          <div class="bird"></div>
+          <div class="sound">
+            <h2 class="name">* * * * * *</h2>
+            <hr />
+            <div class="player">
+              <button class="play player__icon"></button>
+              <div class="progress-bar">
+                <div class="seekbar">
+                  <div class="fill"></div>
+                  <div class="handle"></div>
+                </div>
+                <div class="player-time">
+                  <div class="timer">00:00</div>
+                  <div class="duration">00:00</div>
                 </div>
               </div>
-              <div class="volume-container">
-                <button class="volume__icon player__icon"></button>
-                <input type="range" class="volume" min="0" max="100" value="50" />
-              </div>
+            </div>
+            <div class="volume-container">
+              <button class="volume__icon player__icon"></button>
+              <input
+                type="range"
+                class="volume"
+                min="0"
+                max="100"
+                value="50"
+              />
             </div>
           </div>
-          <div class="answers">
-            <ul class="options"></ul>
-            <div class="correct-answer">
-              <p class="text">
-                Прослушайте плеер. <br />
-                Выберите верный ответ.
-              </p>
-            </div>
-          </div>
-          <button disabled class="next-level">Следующий уровень</button>
         </div>
+        <div class="answers">
+          <ul class="options"></ul>
+          <div class="correct-answer">
+            <p class="text">
+              Прослушайте плеер. <br />
+              Выберите верный ответ.
+            </p>
+          </div>
+        </div>
+        <button disabled class="next-level">Следующий уровень</button>
       </div>
     </section>
     <footer class="footer">
@@ -87,8 +95,8 @@
         <a href="https://github.com/JanaAhurtsova" class="github"></a>
       </div>
     </footer>
-    <audio src="../../assets/quiz/correct.mp3" class="audio__win"></audio>
-    <audio src="../../assets/quiz/mistake.mp3" class="audio__mistake"></audio>
+    <audio src="../../assets/quiz/correct.mp3" class="correct__sound"></audio>
+    <audio src="../../assets/quiz/mistake.mp3" class="mistake__sound"></audio>
     <script type="module" src="index.js"></script>
   </body>
 </html>

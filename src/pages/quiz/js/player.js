@@ -1,5 +1,6 @@
 import birdsData from "./birds.js";
 import num from "./game.js";
+import {Article} from './articles.js';
 
 const playNum = Math.floor(Math.random() * 6);
 const play = document.querySelector(".play");
@@ -16,20 +17,24 @@ audio.src = birdsData[num][playNum].audio;
 audio.currentTime = 0;
 
 const resetPlayer = () => {
-    isPlay = false;
-    play.classList.remove("pause");
-}
+  isPlay = false;
+  play.classList.remove("pause");
+};
 
 const playAudio = () => {
+  document.querySelectorAll('.player__icon').forEach(item => item.classList.remove("pause"));
+  if(document.querySelector('.card__audio')) {
+    document.querySelector('.card__audio').pause();
+  }
   if (!isPlay) {
     audio.play();
     play.classList.add("pause");
     isPlay = true;
   } else {
     audio.pause();
-    resetPlayer()
+    resetPlayer();
   }
-}
+};
 
 function updateProgress() {
   fillBar.max = audio.duration;
@@ -85,5 +90,4 @@ volumeIcon.addEventListener("click", muteSound);
 currentVolume.addEventListener("input", changeVolume);
 audio.addEventListener("timeupdate", updateProgress);
 
-export { playNum, audio, play, duration, resetPlayer };
-
+export { playNum, audio, duration, resetPlayer };

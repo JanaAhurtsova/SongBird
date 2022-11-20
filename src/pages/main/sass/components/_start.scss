@@ -1,18 +1,18 @@
 .main {
-  padding: 20px 0;
-  @media (max-width: 680px) {
-    padding: 0;
-  }
+  display: flex;
+  flex: auto;
 }
 
 .title {
+  position: relative;
   margin: 0;
   color: $color-second-brand;
   font-family: "Permanent Marker";
   font-size: 9.2rem;
   line-height: 100%;
   text-align: center;
-  -webkit-text-stroke: .7px white;
+  -webkit-text-stroke: 0.7px white;
+  z-index: 10;
   & span {
     color: $color-brand;
   }
@@ -39,20 +39,15 @@
   height: 425px;
   background: url("../../../assets/main/bird.png") center center/contain
     no-repeat;
-  filter: drop-shadow(0 0 5px #fff)
-          drop-shadow(0 0 10px #fff)
-          drop-shadow(0 0 20px #fff)
-          drop-shadow(0 0 30px $color-brand)
-          drop-shadow(0 0 50px $color-brand)
-          drop-shadow(0 0 60px $color-brand);
+  filter: drop-shadow(0 0 5px #fff) drop-shadow(0 0 10px #fff)
+    drop-shadow(0 0 20px #fff) drop-shadow(0 0 30px $color-brand)
+    drop-shadow(0 0 50px $color-brand) drop-shadow(0 0 60px $color-brand);
   @media (max-width: 680px) {
     width: 90%;
     height: 350px;
-    filter: drop-shadow(0 0 5px #fff)
-          drop-shadow(0 0 10px #fff)
-          drop-shadow(0 0 20px $color-brand)
-          drop-shadow(0 0 30px $color-brand)
-          drop-shadow(0 0 40px $color-brand);
+    filter: drop-shadow(0 0 5px #fff) drop-shadow(0 0 10px #fff)
+      drop-shadow(0 0 20px $color-brand) drop-shadow(0 0 30px $color-brand)
+      drop-shadow(0 0 40px $color-brand);
   }
 }
 
@@ -67,12 +62,14 @@
 }
 
 .greeting {
+  position: relative;
   margin: 0;
   font-family: Neucha;
   font-size: 2.5rem;
   line-height: 200%;
   color: $color-text;
   text-align: center;
+  z-index: 10;
   & span {
     color: $color-second-brand;
   }
@@ -97,7 +94,7 @@
   cursor: pointer;
   background-color: $color-brand;
   color: $color-text;
-  transition: .3s;
+  transition: 0.3s;
   &:hover {
     background-color: $color-second-brand;
     color: $color-background;

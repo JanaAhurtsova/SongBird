@@ -10,7 +10,7 @@ const generateOptions = (data, ind) => {
     optionsArr.push(new Option(option.id, option.name));
   });
   return optionsArr;
-}
+};
 
 const getOptionsWrapper = () => {
   options.innerHTML = "";
@@ -19,7 +19,7 @@ const getOptionsWrapper = () => {
 
 const renderOptionsToDom = (data, ind) => {
   const optionsWrapper = getOptionsWrapper();
-  generateOptions(data, ind).forEach((option) => {
+  generateOptions(data, ind).sort(() => 0.5 - Math.random()).forEach((option) => {
     optionsWrapper.append(option.generateOption());
   });
 };

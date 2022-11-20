@@ -15,6 +15,12 @@
   }
 }
 
+.wrapper__main {
+@include flex($align: stretch);
+flex-direction: column;
+width: 100%;
+}
+
 .footer__wrapper {
   @include flex($justify: space-between);
   position: relative;
