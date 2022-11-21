@@ -17,6 +17,11 @@
   position: relative;
 }
 
+.game__wrapper {
+  @include flex($align: stretch);
+  flex-direction: column;
+  width: 100%;
+}
 
 .results__wrapper {
   @include flex($justify: center);

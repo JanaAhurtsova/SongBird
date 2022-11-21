@@ -95,7 +95,6 @@ const nextLevel = () => {
     //reset player and set new sound
     resetPlayer();
     audio.src = birdsData[num][playNum].audio;
-    console.log(birdsData[num][playNum].name);
     button.setAttribute("disabled", true);
 
     //reset styles
