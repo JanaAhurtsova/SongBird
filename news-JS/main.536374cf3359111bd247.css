@@ -185,7 +185,7 @@
 
 .news-portal {
     background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ),
-    url(./assets/world.4a88b68bb4f9c2db84aa.jpg) center center/cover no-repeat;
+    url(./world.4a88b68bb4f9c2db84aa.jpg) center center/cover no-repeat;
     padding: 0px 30px 5px;
 }
 
@@ -449,7 +449,7 @@ footer .copyright:before {
 .rss {
   width: 12%;
   height: 30px;
-  background: url(./assets/rs_school_js.ad178c0df28bc133be34.svg) center center/contain
+  background: url(./rs_school_js.ad178c0df28bc133be34.svg) center center/contain
     no-repeat;
   filter: invert(1) opacity(.3);
   transition: .2s;
@@ -463,7 +463,7 @@ footer .copyright:before {
 .github {
   width: 7%;
   height: 30px;
-  background: url(./assets/github.d1bb13ce1a593d82e4c0.svg) center center/contain no-repeat;
+  background: url(./github.d1bb13ce1a593d82e4c0.svg) center center/contain no-repeat;
   filter: invert(1) opacity(.3);
   transition: .2s;
 }
