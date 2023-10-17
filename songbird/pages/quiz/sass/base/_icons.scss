@@ -1,0 +1,51 @@
+.player__icon {
+  padding: 0;
+  cursor: pointer;
+}
+
+.play {
+  width: 40px;
+  height: 40px;
+  background: url("../../../assets/quiz/icons/play.svg") center center/contain
+    no-repeat;
+  margin-bottom: 15px;
+  @include media-tablet {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+.pause {
+  width: 40px;
+  height: 40px;
+  background: url("../../../assets/quiz/icons/pause.svg") center center/contain
+    no-repeat;
+  @include media-tablet {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+.volume__icon {
+  width: 30px;
+  height: 30px;
+  background: url("../../../assets/quiz/icons/volume.svg") center center/contain
+    no-repeat;
+  filter: invert(1);
+  @include media-tablet {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.mute__icon {
+  width: 30px;
+  height: 30px;
+  background: url("../../../assets/quiz/icons/mute.svg") center center/contain
+    no-repeat;
+  filter: invert(1);
+  @include media-tablet {
+    width: 20px;
+    height: 20px;
+  }
+}

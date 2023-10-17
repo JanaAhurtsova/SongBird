@@ -1,0 +1,228 @@
+.game {
+  display: flex;
+  flex: auto;
+}
+
+.list-of-questions {
+  @include flex();
+  width: 100%;
+  margin-bottom: 20px;
+  gap: 5px;
+  @media (max-width: 900px) {
+    flex-wrap: wrap;
+  }
+  @include media-tablet {
+    margin-bottom: 10px;
+  }
+}
+
+.list__item {
+  width: 16.6%;
+  padding: 10px 0;
+  border: 1px solid $color-border;
+  border-radius: 5px;
+  font-size: 2rem;
+  background-color: $color-brand;
+  text-align: center;
+  @media (max-width: 900px) {
+    width: 30%;
+  }
+  @include media-tablet {
+    font-size: 1.6rem;
+  }
+  @media (max-width: 405px) {
+    font-size: 1.4rem;
+  }
+  &.active {
+    background-color: $color-active;
+  }
+}
+
+.question {
+  @include flex();
+  padding: 20px 30px;
+  border-radius: 5px;
+  background-color: $color-blocks;
+  gap: 40px;
+  @include media-tablet {
+    padding: 10px;
+    gap: 20px;
+  }
+}
+
+.bird {
+  width: 180px;
+  height: 150px;
+  border: 1px solid $color-border;
+  background: url("../../../assets/quiz/bird.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+  @media (max-width: 600px) {
+    width: 150px;
+    height: 100px;
+  }
+}
+
+.name {
+  margin-top: 0;
+  @media (max-width: 1000px) {
+    font-size: 2rem;
+  }
+  @media (max-width: 530px) {
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+  }
+}
+
+.answers {
+  @include flex();
+  margin: 20px 0;
+  gap: 20px;
+  @include media-tablet {
+    align-items: stretch;
+    flex-direction: column;
+    margin: 10px 0;
+    gap: 10px;
+  }
+}
+
+.options {
+  @include flex($justify: center, $align: flex-start);
+  position: relative;
+  width: 40%;
+  flex-direction: column;
+  gap: 10px;
+  @include media-tablet {
+    width: 100%;
+    gap: 5px;
+  }
+}
+
+.option {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 15px;
+  background-color: $color-text;
+  &.mistake {
+    background-color: $color-mistake;
+  }
+  &.correct {
+    background-color: $color-right;
+  }
+}
+
+.option__item {
+  @include flex($justify: flex-start);
+  width: 100%;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 20px 25px;
+  cursor: pointer;
+  background-color: $color-blocks;
+  transition: 0.3s;
+  &:hover {
+    background-color: $color-brand;
+  }
+  @include media-tablet {
+    padding: 15px;
+  }
+  @media (max-width: 500px) {
+    padding: 12px;
+  }
+}
+
+.option__name {
+  margin: 0;
+  font-size: 2rem;
+  @include media-tablet {
+    font-size: 1.8rem;
+  }
+  @media (max-width: 500px) {
+    font-size: 1.6rem;
+  }
+}
+
+.correct-answer {
+  @include flex($justify: flex-start, $align: stretch);
+  box-sizing: border-box;
+  width: 60%;
+  height: 386px;
+  flex-direction: column;
+  padding: 20px 25px;
+  border-radius: 5px;
+  background-color: $color-blocks;
+  @media (max-width: 900px) {
+    padding: 20px;
+  }
+  @include media-tablet {
+    width: 100%;
+    height: 330px;
+  }
+}
+
+.text {
+  margin: 0;
+  font-size: 2rem;
+  line-height: 140%;
+  @include media-tablet {
+    font-size: 1.6rem;
+  }
+}
+
+.card {
+  @include flex($align: stretch, $justify: flex-start);
+  flex-direction: column;
+}
+
+.card__media {
+  @include flex($align: flex-start);
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.bird__img {
+  display: block;
+  margin: 0;
+  width: 40%;
+  height: 100%;
+  max-height: 210px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.bird-species {
+  @include flex($align: stretch, $justify: center);
+  width: 65%;
+  flex-direction: column;
+  gap: 15px;
+  @include media-tablet {
+    width: 75%;
+  }
+  @media (max-width: 550px) {
+    gap: 5px;
+  }
+}
+
+.species {
+  margin: 0;
+  font-size: 2.5rem;
+  @media (max-width: 1000px) {
+    font-size: 1.8rem;
+  }
+  @media (max-width: 530px) {
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+  }
+}
+
+.description {
+  margin: 0;
+  font-size: 1.8rem;
+  line-height: 140%;
+  @include media-tablet {
+    font-size: 1.6rem;
+  }
+}

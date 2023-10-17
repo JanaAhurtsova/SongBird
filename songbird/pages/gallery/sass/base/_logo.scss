@@ -1,0 +1,13 @@
+.logo {
+  color: $color-second-brand;
+  font-family: "Permanent Marker";
+  font-size: 2.5rem;
+  text-align: center;
+  text-decoration: none;
+  & span {
+    color: $color-brand;
+  }
+  @include media-tablet {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,27 @@
+.wrapper {
+  max-width: $content-width;
+  margin: auto;
+}
+
+.header__wrapper {
+  @include flex($justify: flex-start);
+  position: relative;
+  gap: 200px;
+  @media (max-width: 1400px) {
+    gap: 120px;
+  }
+  @include media-tablet {
+    gap: 60px;
+  }
+}
+
+.wrapper__main {
+  @include flex($align: stretch);
+  flex-direction: column;
+  width: 100%;
+}
+
+.footer__wrapper {
+  @include flex($justify: space-between);
+  position: relative;
+}

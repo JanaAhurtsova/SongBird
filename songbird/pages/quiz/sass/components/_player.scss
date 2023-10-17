@@ -1,0 +1,82 @@
+.sound {
+  width: 85%;
+}
+
+.player {
+  @include flex();
+  width: 100%;
+  margin-top: 20px;
+  gap: 20px;
+  @media (max-width: 550px) {
+    margin-top: 5px;
+  }
+}
+
+.player__card {
+  flex-wrap: nowrap;
+}
+
+.progress-bar {
+  @include flex($align: stretch);
+  width: 100%;
+  flex-direction: column;
+}
+
+.seekbar {
+  @include flex($justify: flex-start);
+  width: 100%;
+  height: 4px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  background-color: $color-text;
+  cursor: pointer;
+}
+
+.fill {
+  height: 4px;
+  border-radius: 5px;
+  background-color: $color-brand;
+}
+
+.handle {
+  height: 8px;
+  width: 8px;
+  border-radius: 30%;
+  background-color: $color-brand;
+  transform: scale(1.5);
+}
+
+.player-time {
+  @include flex();
+}
+
+.timer,
+.duration {
+  @include media-tablet {
+    font-size: 1.4rem;
+  }
+}
+
+.volume-container {
+  @include flex();
+  width: 20%;
+  @include media-tablet {
+    width: 40%;
+  }
+}
+
+.volume {
+  width: 80%;
+  height: 4px;
+  background-color: $color-text;
+  border-radius: 3px;
+}
+
+.volume::-webkit-slider-thumb {
+  width: 9px;
+  height: 9px;
+  appearance: none;
+  border-radius: 30%;
+  background-color: $color-brand;
+  cursor: pointer;
+}
