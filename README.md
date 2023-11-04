@@ -1,6 +1,6 @@
 # songbird
 
-[Songbird](https://rolling-scopes-school.github.io/janaahurtsova-JSFE2022Q3/songbird/pages/main/) - одностраничное приложение, викторина для распознавания птиц по их голосам.
+[Songbird](https://rolling-scopes-school.github.io/janaahurtsova-JSFE2022Q3/songbird/pages/main/) - викторина для распознавания птиц по их голосам.
 
 ## Stack
 HTML, SCSS, JS
